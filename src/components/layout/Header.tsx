@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-primary rounded-[20px] py-3.5 px-7">
+    <header className="bg-primary rounded-[20px] py-3.5 px-7 ">
       <div className="flex items-center justify-between">
         {/* Left side - Social Media Icons */}
         <div className="flex items-center gap-4">
