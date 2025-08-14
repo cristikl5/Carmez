@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "var(--color-primary)",
         layout: "var(--color-layout)",
+        dark: "var(--color-dark)",
       },
     },
   },

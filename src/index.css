@@ -1,32 +1,7 @@
 @import "tailwindcss";
-
 @import "./styles/normalize.css";
-
-@theme {
-  --font-primary: "Quicksand", sans-serif;
-  --font-barlow: "Barlow Condensed", sans-serif;
-  --font-ibarra: "Ibarra Real Nova", serif;
-  --color-primary: hsl(358 68% 37%);
-  --color-layout: hsl(40 7% 91%);
-}
-
-@layer base {
-  html {
-    font-family: var(--font-primary);
-  }
-}
-
-.fluid-container {
-  max-width: 1200px;
-  padding-left: 28px;
-  padding-right: 28px;
-  margin: 0 auto;
-}
-
-@media (max-width: 1200px) {
-  .fluid-container {
-    padding-left: 16px;
-    padding-right: 16px;
-    overflow-x: hidden;
-  }
-}
+@import "./styles/theme.css";
+@import "./styles/base.css";
+@import "./styles/utilities.css";
+@import "./styles/swiper.css";
+@import "./styles/components/news.css";

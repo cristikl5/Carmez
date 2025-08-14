@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Utility classes - Reusable layout and spacing utilities
+   ========================================================================== */
+
+/* Global overflow prevention utility */
+.no-overflow {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Fluid container for responsive layouts */
+.fluid-container {
+  max-width: 1200px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Responsive container padding
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .fluid-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fluid-container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* ==========================================================================
+   Mobile container overrides
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .fluid-container {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fluid-container {
+    overflow-x: hidden;
+  }
+}

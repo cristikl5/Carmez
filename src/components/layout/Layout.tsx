@@ -12,16 +12,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isHomePage = location.pathname === "/";
 
   return (
-    <div className="min-h-screen flex flex-col bg-layout">
-      <div className="relative">
-        <div className="absolute top-0 left-0 right-0 z-10 p-3 fluid-container">
+    <div className="min-h-screen flex flex-col no-overflow">
+      {/* Header - Always visible */}
+      <div className="relative z-10">
+        <div className="absolute top-0 left-0 right-0 z-10 p-2 md:p-3 fluid-container">
           <Header />
         </div>
-        {isHomePage && <HeroSection />}
       </div>
-      <div className="fluid-container">
-        <main className="flex-grow">{children}</main>
-      </div>
+
+      {/* Hero Section - Only on homepage */}
+      {isHomePage && (
+        <div className="relative no-overflow">
+          <HeroSection />
+        </div>
+      )}
+
+      {/* Main Content */}
+      <main
+        className={`flex-grow no-overflow ${!isHomePage ? "pt-20 md:pt-24" : ""}`}
+      >
+        {children}
+      </main>
+
       <Footer />
     </div>
   );

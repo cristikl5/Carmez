@@ -1,3 +1,4 @@
+import { News } from "../components/home";
 import History from "../components/home/History";
 import Products from "../components/home/Products";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <section>
       <History />
       <Products />
+      <News />
     </section>
   );
 };
