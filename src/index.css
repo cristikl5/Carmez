@@ -5,8 +5,9 @@
 @theme {
   --font-primary: "Quicksand", sans-serif;
   --font-barlow: "Barlow Condensed", sans-serif;
+  --font-ibarra: "Ibarra Real Nova", serif;
   --color-primary: hsl(358 68% 37%);
-  --color-layout: hsl(42 6% 65%);
+  --color-layout: hsl(40 7% 91%);
 }
 
 @layer base {
