@@ -70,7 +70,7 @@ const Header = () => {
             <div className="mx-[72px]">
               <a href="/">
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo.svg"
                   alt="logo"
                   width={100}
                   height={50}

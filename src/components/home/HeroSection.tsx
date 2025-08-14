@@ -3,7 +3,7 @@ import ButtonPrimary from "../ui/ButtonPrimary";
 const HeroSection = () => {
   return (
     <section
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center"
+      className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center relative"
       style={{
         backgroundImage: "url('/images/hero.svg')",
       }}
@@ -18,6 +18,11 @@ const HeroSection = () => {
             Din 1904.
           </h1>
           <ButtonPrimary className="w-fit">Cumpara aici</ButtonPrimary>
+        </div>
+        <div className="flex items-center justify-center gap-3 absolute bottom-5 left-0 right-0">
+          <span className="w-9 h-1 bg-white opacity-20 rounded-xs"></span>
+          <span className="w-9 h-1 bg-primary rounded-full"></span>
+          <span className="w-9 h-1 bg-white opacity-20 rounded-full"></span>
         </div>
       </div>
     </section>
