@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { HeroSection } from "../home";
+import Breadcrumbs from "../ui/Breadcrumbs";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -27,12 +28,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       )}
 
+      {/* Breadcrumbs - Only on non-home pages */}
+      {!isHomePage && (
+        <div className="pt-20 md:pt-24">
+          <Breadcrumbs />
+        </div>
+      )}
+
       {/* Main Content */}
-      <main
-        className={`flex-grow no-overflow ${!isHomePage ? "pt-20 md:pt-24" : ""}`}
-      >
-        {children}
-      </main>
+      <main className="flex-grow no-overflow">{children}</main>
 
       <Footer />
     </div>
