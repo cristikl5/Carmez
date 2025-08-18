@@ -49,7 +49,7 @@ const News = () => {
   };
 
   return (
-    <section className="py-10 overflow-visible news-section">
+    <section className="py-10 overflow-visible news-section bg-white">
       <div className="fluid-container">
         <h2 className="text-center font-medium text-[32px] font-barlow text-dark">
           Noutăți

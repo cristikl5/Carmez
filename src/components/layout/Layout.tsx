@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
+import AboutUsHero from "../about-us/AboutUsHero";
 import { HeroSection } from "../home";
-import Breadcrumbs from "../ui/Breadcrumbs";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -11,9 +11,10 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isAboutUsPage = location.pathname === "/despre-noi";
 
   return (
-    <div className="min-h-screen flex flex-col no-overflow">
+    <div className="min-h-screen flex flex-col no-overflow bg-layout">
       {/* Header - Always visible */}
       <div className="relative z-10">
         <div className="absolute top-0 left-0 right-0 z-10 p-2 md:p-3 fluid-container">
@@ -28,10 +29,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       )}
 
-      {/* Breadcrumbs - Only on non-home pages */}
-      {!isHomePage && (
-        <div className="pt-20 md:pt-24">
-          <Breadcrumbs />
+      {/* About Us Hero Section - Only on about us page */}
+      {isAboutUsPage && (
+        <div className="relative no-overflow">
+          <AboutUsHero />
         </div>
       )}
 
