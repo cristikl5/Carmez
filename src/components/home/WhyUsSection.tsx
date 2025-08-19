@@ -29,7 +29,7 @@ const motives: Motive[] = [
 const WhyUsSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="py-10 bg-white">
+    <section className="pb-10 bg-white">
       <div className="fluid-container">
         <div
           className="p-10 border border-gray-400 rounded-4xl overflow-visible"
