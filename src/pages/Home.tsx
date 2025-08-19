@@ -1,13 +1,17 @@
-import { News } from "../components/home";
-import History from "../components/home/History";
-import Products from "../components/home/Products";
+import {
+  HistorySection,
+  NewsSection,
+  ProductsSection,
+  WhyUsSection,
+} from "../components/home";
 
 const Home = () => {
   return (
     <section>
-      <History />
-      <Products />
-      <News />
+      <HistorySection />
+      <ProductsSection />
+      <NewsSection />
+      <WhyUsSection />
     </section>
   );
 };

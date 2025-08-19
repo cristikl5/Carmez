@@ -216,7 +216,7 @@ const Footer = () => {
                 Urmărește-ne
               </span>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/carmez.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-75 transition-opacity"
@@ -228,7 +228,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/carmezmd/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-75 transition-opacity"

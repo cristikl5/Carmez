@@ -1,4 +1,4 @@
-import FaqCard from "../ui/FaqCard";
+import FaqCard from "./FaqCard";
 
 const questions = [
   {

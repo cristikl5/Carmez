@@ -1,7 +1,7 @@
 import Faq from "../components/about-us/Faq";
 import Moments from "../components/about-us/Moments";
 
-const DespreNoi = () => {
+const AboutUs = () => {
   return (
     <section className="py-20">
       <div className="fluid-container">
@@ -25,4 +25,4 @@ const DespreNoi = () => {
   );
 };
 
-export default DespreNoi;
+export default AboutUs;

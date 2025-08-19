@@ -28,7 +28,7 @@ const Button = ({
   return (
     <button
       {...props}
-      className={`py-4 px-6 rounded-xl inline-flex items-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${className}`}
+      className={`py-4 px-6 text-base rounded-xl inline-flex items-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${className}`}
     >
       {children}
       {icon}

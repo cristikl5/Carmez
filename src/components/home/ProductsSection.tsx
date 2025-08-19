@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import ProductCard from "../ui/ProductCard";
+import ProductCard from "./ProductCard";
 
 const products = [
   {
@@ -49,7 +49,7 @@ const products = [
   },
 ];
 
-const Products = () => {
+const ProductsSection = () => {
   return (
     <div className="bg-layout py-10">
       <div className="fluid-container">
@@ -73,4 +73,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsSection;

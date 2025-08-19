@@ -1,4 +1,4 @@
-import { ChevronDown, Menu, ShoppingCart, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const Header = () => {
           {/* Social Media Icons - Desktop only (replaces left logo) */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/carmez.md"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-200 transition-colors"
@@ -47,7 +47,7 @@ const Header = () => {
               />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/carmezmd/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-200 transition-colors"
@@ -137,15 +137,16 @@ const Header = () => {
 
             {/* Right nav items */}
             <div className="flex items-center gap-6">
-              <div className="relative">
-                <a
-                  href="/catalog"
-                  className="text-white text-base font-bold hover:text-gray-200 transition-colors flex items-center gap-1"
-                >
-                  Catalog
-                  <ChevronDown size={12} color="white" />
-                </a>
-              </div>
+              <NavLink
+                to="/catalog"
+                className={({ isActive }) =>
+                  `relative text-white text-base font-bold hover:text-gray-200 transition-colors after:absolute after:left-0 after:-bottom-[4px] after:h-0.5 after:bg-white after:transition-all after:duration-200 ${
+                    isActive ? "after:w-full" : "after:w-0"
+                  }`
+                }
+              >
+                Catalog
+              </NavLink>
               <NavLink
                 to="/retete"
                 className={({ isActive }) =>

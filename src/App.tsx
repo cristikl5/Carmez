@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import AboutUs from "./pages/AboutUs";
 import Catalog from "./pages/Catalog";
-import Contacte from "./pages/Contacte";
-import DespreNoi from "./pages/DespreNoi";
+import Contacts from "./pages/Contacts";
 import Home from "./pages/Home";
-import Magazine from "./pages/Magazine";
-import Noutati from "./pages/Noutati";
+import News from "./pages/News";
 import Produs from "./pages/Produs";
-import Recete from "./pages/Recete";
+import Recipes from "./pages/Recipes";
+import Stores from "./pages/Stores";
 
 function App() {
   return (
@@ -15,13 +15,13 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/despre-noi" element={<DespreNoi />} />
-          <Route path="/news" element={<Noutati />} />
+          <Route path="/despre-noi" element={<AboutUs />} />
+          <Route path="/news" element={<News />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/retete" element={<Recete />} />
-          <Route path="/contacte" element={<Contacte />} />
-          <Route path="/magazine" element={<Magazine />} />
-          <Route path="/contacte/magazine" element={<Magazine />} />
+          <Route path="/retete" element={<Recipes />} />
+          <Route path="/contacte" element={<Contacts />} />
+          <Route path="/magazine" element={<Stores />} />
+          <Route path="/contacte/magazine" element={<Stores />} />
           <Route path="/produs" element={<Produs />} />
         </Routes>
       </Layout>

@@ -66,7 +66,7 @@ const Breadcrumbs = ({ customTitle }: BreadcrumbsProps) => {
       </div>
 
       {/* Page Title */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-dark font-barlow leading-10">
+      <h1 className="text-3xl !mt-0 md:text-4xl lg:text-5xl font-medium text-dark font-barlow leading-10">
         {currentPageTitle}
       </h1>
     </div>

@@ -3,37 +3,37 @@ import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../ui/Button";
-import NewsCard from "../ui/NewsCard";
+import HomeNewsCard from "./HomeNewsCard";
 
 const news = [
   {
     title: "Retele clasice la masa de Pasti. Din 1904.",
     buttonText: "Cumpara aici",
-    bgImage: "/images/news/carnaciori-1.jpg",
+    bgImage: "/images/home-news/carnaciori-1.jpg",
   },
   {
     title: "Retele clasice la masa de Pasti. Din 1904.",
     buttonText: "Cumpara aici",
-    bgImage: "/images/news/carnaciori-2.jpg",
+    bgImage: "/images/home-news/carnaciori-2.jpg",
   },
   {
     title: "Retele clasice la masa de Pasti. Din 1904.",
     buttonText: "Cumpara aici",
-    bgImage: "/images/news/carnaciori-3.jpg",
+    bgImage: "/images/home-news/carnaciori-3.jpg",
   },
   {
     title: "Retele clasice la masa de Pasti. Din 1904.",
     buttonText: "Cumpara aici",
-    bgImage: "/images/news/carnaciori-3.jpg",
+    bgImage: "/images/home-news/carnaciori-3.jpg",
   },
   {
     title: "Retele clasice la masa de Pasti. Din 1904.",
     buttonText: "Cumpara aici",
-    bgImage: "/images/news/carnaciori-3.jpg",
+    bgImage: "/images/home-news/carnaciori-3.jpg",
   },
 ];
 
-const News = () => {
+const NewsSection = () => {
   const swiperRef = useRef<any>(null);
 
   const handlePrev = () => {
@@ -68,7 +68,7 @@ const News = () => {
         >
           {news.map(item => (
             <SwiperSlide key={item.bgImage} className="overflow-visible">
-              <NewsCard
+              <HomeNewsCard
                 bgImage={item.bgImage}
                 title={item.title}
                 buttonText={item.buttonText}
@@ -86,9 +86,14 @@ const News = () => {
             <ArrowRight size={18} />
           </Button>
         </div>
+        <div className="flex items-center justify-center mt-8">
+          <Button variant="outline" className="text-sm md:text-base">
+            Vezi toate
+          </Button>
+        </div>
       </div>
     </section>
   );
 };
 
-export default News;
+export default NewsSection;

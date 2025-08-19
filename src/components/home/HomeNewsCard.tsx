@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import Button from "./Button";
+import Button from "../ui/Button";
 
-const NewsCard = ({
+const HomeNewsCard = ({
   title,
   buttonText,
   bgImage,
@@ -31,4 +31,4 @@ const NewsCard = ({
   );
 };
 
-export default NewsCard;
+export default HomeNewsCard;

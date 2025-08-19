@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Button from "../ui/Button";
 
-const History = () => {
+const HistorySection = () => {
   return (
     <div className="bg-layout pt-10 md:pt-16 lg:pt-20">
       <div className="grid lg:grid-cols-2 gap-8 md:gap-11 items-center fluid-container">
@@ -53,4 +53,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default HistorySection;
