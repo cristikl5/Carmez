@@ -3,8 +3,13 @@ import { ChevronRight } from "lucide-react";
 const Pagination = ({
   currentPage = 1,
   totalPages = 10,
-  onPageChange = (page: number) => {},
+  onPageChange = () => {},
   visiblePages = 3,
+}: {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+  visiblePages: number;
 }) => {
   const generatePageNumbers = () => {
     const pages = [];

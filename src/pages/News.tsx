@@ -1,7 +1,7 @@
 import NewsGrid, { type News } from "@/components/news/NewsGrid";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { Input } from "@/components/ui/Input";
-import Pagination from "@/components/ui/pagination";
+import Pagination from "@/components/ui/Pagination";
 import {
   Select,
   SelectContent,
@@ -13,7 +13,7 @@ import {
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const news: News[] = [
+const initialNews: News[] = [
   {
     image: "/images/recipes/food-1.png",
     title: "4 Expert Tips On How To Choose The Right Men’s Wallet",
@@ -64,13 +64,13 @@ const news: News[] = [
   },
 ];
 
-const News = () => {
+const NewsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 2;
 
   const filteredNews = useMemo(() => {
-    return news.filter(news =>
+    return initialNews.filter(news =>
       news.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm]);
@@ -111,6 +111,7 @@ const News = () => {
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={setCurrentPage}
+            visiblePages={5}
           />
         </div>
       </div>
@@ -118,4 +119,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default NewsPage;
