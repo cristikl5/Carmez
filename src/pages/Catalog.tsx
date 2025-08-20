@@ -53,7 +53,7 @@ const Catalog = () => {
   };
 
   return (
-    <div className="py-36">
+    <div className="py-24 sm:py-36">
       <div className="fluid-container">
         <Breadcrumbs />
         <div className="mt-9">
@@ -62,7 +62,7 @@ const Catalog = () => {
             onReset={handleFiltersReset}
           />
         </div>
-        <div className="mt-6 flex items-center justify-between">
+        <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
           <span className="text-sm font-lato font-normal text-gray-400">
             Am găsit <span className="text-primary">24</span> de articole pentru
             tine

@@ -59,7 +59,7 @@ const Stores = () => {
   }, [searchTerm]);
 
   return (
-    <div className="py-36">
+    <div className="py-24 sm:py-36">
       <div className="fluid-container">
         <div className="flex items-center justify-between">
           <Breadcrumbs />

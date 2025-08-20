@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import type { News } from "./NewsGrid";
 
 const NewsCard = ({ news }: { news: News }) => {
+  const navigate = useNavigate();
   return (
-    <div className="space-y-5 hover:scale-[102%] transition-all duration-300 cursor-pointer">
+    <div
+      className="space-y-5 hover:scale-[102%] transition-all duration-300 cursor-pointer"
+      onClick={() => navigate(`/news/${news.title}`)}
+      role="button"
+    >
       <img src={news.image} alt={news.title} className="rounded-[18px]" />
       <div className="flex flex-col gap-2.5">
         <h3 className="text-xl sm:text-2xl font-bold text-center">

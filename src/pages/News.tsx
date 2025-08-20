@@ -76,11 +76,11 @@ const NewsPage = () => {
   }, [searchTerm]);
 
   return (
-    <div className="py-36">
+    <div className="py-24 sm:py-36">
       <div className="fluid-container">
         <div className="flex items-center flex-wrap justify-between">
           <Breadcrumbs />
-          <div className="flex items-end flex-wrap gap-6">
+          <div className="flex items-end flex-wrap gap-6 w-full sm:w-auto">
             <Input
               placeholder="Cauta..."
               className="rounded-[10px] h-11 w-full sm:w-auto"

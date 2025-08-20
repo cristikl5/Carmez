@@ -1,9 +1,9 @@
-import ProductCard from "../home/ProductCard";
 import type { Product } from "../home/ProductsSection";
+import ProductCard from "../products/ProductCard";
 
 const ProductsGrid = ({ products }: { products: Product[] }) => {
   return products && products.length > 0 ? (
-    <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-10">
       {products.map(product => (
         <ProductCard key={product.title} {...product} />
       ))}

@@ -17,7 +17,7 @@ const Button = ({
       case "primary":
         return "bg-primary text-white hover:bg-primary/90";
       case "secondary":
-        return "bg-white text-primary hover:bg-gray-50";
+        return "bg-white text-primary hover:bg-gray-50 hover:bg-primary hover:text-white";
       case "outline":
         return "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white";
       case "icon":
@@ -41,7 +41,7 @@ const Button = ({
   return (
     <button
       {...props}
-      className={`py-4 px-6 text-base rounded-xl inline-flex items-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${getSizeStyles()} ${className}`}
+      className={`py-4 px-6 text-base rounded-xl inline-flex items-center justify-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${getSizeStyles()} ${className}`}
     >
       {children}
       {icon}

@@ -1,5 +1,5 @@
+import ProductCard from "../products/ProductCard";
 import Button from "../ui/Button";
-import ProductCard from "./ProductCard";
 
 export type Product = {
   image: string;
@@ -64,7 +64,7 @@ const ProductsSection = () => {
           Produse
         </h2>
         <div className="space-y-8 md:space-y-12 mt-6 md:mt-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-x-10 lg:gap-y-20 justify-items-center">
+          <div className="grid  grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-6 md:gap-8 lg:gap-x-10 lg:gap-y-20 justify-items-center">
             {products.map(product => (
               <ProductCard key={product.title} {...product} />
             ))}

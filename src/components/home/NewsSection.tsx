@@ -59,12 +59,32 @@ const NewsSection = () => {
         <Swiper
           onSwiper={swiper => (swiperRef.current = swiper)}
           modules={[Navigation]}
-          spaceBetween={32}
-          slidesPerView="auto"
-          centeredSlides={false}
+          spaceBetween={16}
+          slidesPerView={1}
+          centeredSlides={true}
           loop={true}
           className="overflow-visible"
           style={{ overflow: "visible" }}
+          breakpoints={{
+            // Mobile: Strict 1 slide per view with centered slides
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 16,
+              centeredSlides: true,
+            },
+            // Tablet: Show 1.5 slides per view
+            768: {
+              slidesPerView: 1.5,
+              spaceBetween: 24,
+              centeredSlides: false,
+            },
+            // Desktop: Auto slides with full spacing
+            1024: {
+              slidesPerView: "auto",
+              spaceBetween: 32,
+              centeredSlides: false,
+            },
+          }}
         >
           {news.map(item => (
             <SwiperSlide key={item.bgImage} className="overflow-visible">

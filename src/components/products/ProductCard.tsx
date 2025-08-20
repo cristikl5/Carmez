@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export type CardProps = {
   image: string;
   category: string;
@@ -6,10 +8,15 @@ export type CardProps = {
 };
 
 const ProductCard = ({ image, title, category, isNew }: CardProps) => {
+  const navigate = useNavigate();
   return (
-    <div className="bg-white rounded-2xl p-4 md:p-6 border border-gray-200 hover:shadow-md transition-shadow duration-300 w-full max-w-[280px] relative cursor-pointer">
+    <div
+      className="bg-white rounded-2xl p-4 md:p-6 border border-gray-200 hover:shadow-md transition-shadow duration-300 w-full relative cursor-pointer"
+      role="button"
+      onClick={() => navigate(`/produs/${title}`)}
+    >
       {isNew && (
-        <span className="absolute top-0 left-0 bg-primary text-white rounded-tl-[18px] rounded-br-3xl px-4 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium">
+        <span className="absolute top-0 left-0 bg-primary text-white rounded-tl-[18px] rounded-br-3xl px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium">
           New
         </span>
       )}
@@ -20,7 +27,7 @@ const ProductCard = ({ image, title, category, isNew }: CardProps) => {
         <p className="text-gray-500 text-xs md:text-sm font-normal">
           {category}
         </p>
-        <h3 className="font-bold text-base md:text-lg leading-6 md:leading-7">
+        <h3 className="font-bold text-sm md:text-base lg:text-lg leading-6 md:leading-7">
           {title}
         </h3>
       </div>

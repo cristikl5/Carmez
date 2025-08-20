@@ -72,10 +72,10 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex items-center justify-between bg-white py-6 px-7 rounded-[18px]">
-        <div className="flex items-center gap-6">
-          <div>
-            <Label className="text-xs text-gray-400 font-medium font-lato mb-2">
+      <div className="flex items-center justify-between bg-white py-4 sm:py-6 px-4 sm:px-7 rounded-[18px] flex-col gap-4 lg:flex-row">
+        <div className="flex items-center gap-4 sm:gap-6 flex-col lg:flex-row w-full lg:w-auto">
+          <div className="w-full lg:w-auto">
+            <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
               Tipul de carne
             </Label>
             <Controller
@@ -83,7 +83,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               control={control}
               render={({ field }) => (
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <SelectTrigger className="w-full sm:min-w-[180px] border-gray-400">
+                  <SelectTrigger className="w-full lg:min-w-[180px] border-gray-400 h-12 sm:h-10">
                     <SelectValue placeholder="Carne de porc" />
                   </SelectTrigger>
                   <SelectContent>
@@ -95,8 +95,8 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               )}
             />
           </div>
-          <div>
-            <Label className="text-xs text-gray-400 font-medium font-lato mb-2">
+          <div className="w-full lg:w-auto">
+            <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
               Categorie de produse
             </Label>
             <Controller
@@ -104,7 +104,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               control={control}
               render={({ field }) => (
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <SelectTrigger className="w-full sm:min-w-[232px] border-gray-400">
+                  <SelectTrigger className="w-full lg:min-w-[232px] border-gray-400 h-12 sm:h-10">
                     <SelectValue placeholder="Carnat" />
                   </SelectTrigger>
                   <SelectContent>
@@ -116,8 +116,8 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               )}
             />
           </div>
-          <div>
-            <Label className="text-xs text-gray-400 font-medium font-lato mb-2">
+          <div className="w-full lg:w-auto">
+            <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
               Data de expirare a produsului
             </Label>
             <Controller
@@ -131,17 +131,19 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
                   min={2}
                   onValueChange={value => field.onChange(value[0])}
                   step={1}
-                  className="min-w-[300px]"
+                  className="w-full lg:w-[300px]"
                 />
               )}
             />
-            <div className="mt-3 flex items-center justify-between">
+            <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
               <span>2 Luni</span>
-              <span>{formatValue(watchedValues.expirationDate || 0)}</span>
+              <span className="font-medium">
+                {formatValue(watchedValues.expirationDate || 0)}
+              </span>
               <span>5 Ani</span>
             </div>
           </div>
-          <div className="flex items-center gap-3 whitespace-nowrap">
+          <div className="flex items-center gap-3 whitespace-nowrap w-full lg:w-auto justify-center lg:justify-start">
             <Controller
               name="newProduct"
               control={control}
@@ -150,19 +152,25 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
                   id="newProduct"
                   checked={value}
                   onCheckedChange={onChange}
+                  className="w-5 h-5 sm:w-4 sm:h-4"
                 />
               )}
             />
             <Label
               htmlFor="newProduct"
-              className="text-sm text-gray-600 font-lato"
+              className="text-sm text-gray-600 font-lato cursor-pointer"
             >
               Produs nou
             </Label>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <Button type="button" variant="outline" onClick={handleReset}>
+        <div className="flex items-center gap-3 w-full lg:w-auto">
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full lg:w-auto h-12 sm:h-10 text-sm"
+            onClick={handleReset}
+          >
             Resetare
           </Button>
         </div>

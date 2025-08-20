@@ -8,7 +8,7 @@ const Contacts = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="py-36">
+    <div className="py-24 sm:py-36">
       <div className="fluid-container">
         <Breadcrumbs />
         <div className="grid sm:grid-cols-2 gap-16">
@@ -17,7 +17,7 @@ const Contacts = () => {
             alt="Contact us"
             className="rounded-3xl object-cover h-full border border-gray-400 overflow-visible"
           />
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col justify-between h-full gap-4">
             <div className="flex flex-col gap-4">
               <h4 className="text-2xl font-bold text-primary">Oficiu</h4>
               <p className="text-gray-600 font-normal font-lato">

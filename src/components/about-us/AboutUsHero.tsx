@@ -3,7 +3,7 @@ import Breadcrumbs from "../ui/Breadcrumbs";
 const AboutUsHero = () => {
   return (
     <section
-      className="min-h-[380px] w-full bg-cover bg-no-repeat flex items-center justify-start relative px-4 md:px-0"
+      className="min-h-[380px] w-full bg-cover bg-no-repeat flex  justify-start py-24 sm:py-36 relative "
       style={{
         backgroundImage: "url('/images/about-us/hero.jpg')",
       }}

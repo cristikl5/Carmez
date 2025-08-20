@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ProductCard from "../home/ProductCard";
+import ProductCard from "../products/ProductCard";
 import Breadcrumbs from "../ui/Breadcrumbs";
 import Button from "../ui/Button";
 import Ingredients from "./Ingredients";
@@ -74,10 +74,11 @@ const RecipeDetails = () => {
   };
 
   return (
-    <section className="py-36">
+    <section className="py-24 sm:py-36">
       <div className="fluid-container">
-        <Breadcrumbs />
-        <div className="recipe-fluid-container">
+        <Breadcrumbs hideTitle />
+        <div className="details-fluid-container">
+          <h1 className="font-semibold font-barlow text-4xl">{name}</h1>
           <div className="mt-8 space-y-8 flex flex-col justify-center">
             <img
               src="/images/recipes/olivier.png"
@@ -94,14 +95,14 @@ const RecipeDetails = () => {
               Produse din rețetă
             </h3>
             <div className="flex items-center gap-6">
-              <Button variant="ghost" className="font-bold">
+              <Button variant="ghost" className="font-bold whitespace-nowrap">
                 Vezi pe toate
               </Button>
               <div className="flex items-center gap-1">
-                <Button variant="icon" className="p-1" onClick={handlePrev}>
+                <Button variant="icon" onClick={handlePrev}>
                   <ArrowLeft />
                 </Button>
-                <Button variant="icon" className="p-1" onClick={handleNext}>
+                <Button variant="icon" onClick={handleNext}>
                   <ArrowRight />
                 </Button>
               </div>
@@ -111,15 +112,38 @@ const RecipeDetails = () => {
             <Swiper
               onSwiper={swiper => (swiperRef.current = swiper)}
               modules={[Navigation]}
-              spaceBetween={40}
-              slidesPerView="auto"
-              centeredSlides={false}
+              spaceBetween={16}
+              slidesPerView={1}
+              centeredSlides={true}
               loop={true}
               className="overflow-visible"
               style={{ overflow: "visible" }}
+              breakpoints={{
+                // Mobile: Strict 1 slide per view with centered slides
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 16,
+                  centeredSlides: true,
+                },
+                // Tablet: Show 1.5 slides per view
+                768: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 24,
+                  centeredSlides: false,
+                },
+                // Desktop: Auto slides with full spacing
+                1024: {
+                  slidesPerView: "auto",
+                  spaceBetween: 32,
+                  centeredSlides: false,
+                },
+              }}
             >
               {products.map(product => (
-                <SwiperSlide key={product.image} className="overflow-visible">
+                <SwiperSlide
+                  key={product.image}
+                  className="overflow-visible w-full"
+                >
                   <ProductCard {...product} key={product.title} />
                 </SwiperSlide>
               ))}

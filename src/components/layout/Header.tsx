@@ -69,7 +69,7 @@ const Header = () => {
             </div>
             <div className="relative">
               <a
-                href="/cart"
+                href="/"
                 className="text-white hover:text-gray-200 transition-colors"
               >
                 <ShoppingCart size={18} color="white" />
@@ -178,7 +178,7 @@ const Header = () => {
           </div>
           <div className="relative">
             <a
-              href="/cart"
+              href="#"
               className="text-white hover:text-gray-200 transition-colors"
             >
               <ShoppingCart size={20} color="white" />

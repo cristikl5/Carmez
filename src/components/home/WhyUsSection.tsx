@@ -32,7 +32,7 @@ const WhyUsSection = () => {
     <section className="pb-10 bg-white">
       <div className="fluid-container">
         <div
-          className="p-10 border border-gray-400 rounded-4xl overflow-visible"
+          className="p-4 sm:p-10 border border-gray-400 rounded-4xl overflow-visible"
           style={{
             backgroundImage: "url('/images/why-us/Group.png')",
             backgroundRepeat: "no-repeat",
@@ -44,7 +44,7 @@ const WhyUsSection = () => {
             <h3 className="text-center font-barlow font-medium text-3xl">
               De ce Carmez?
             </h3>
-            <div className="grid sm:grid-cols-3 gap-24">
+            <div className="grid lg:grid-cols-3 gap-24">
               {motives.map(motive => (
                 <div key={motive.description}>
                   <h4 className="text-center font-barlow font-bold text-9xl">

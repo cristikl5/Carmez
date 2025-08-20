@@ -2,9 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 
 interface BreadcrumbsProps {
   customTitle?: string;
+  hideTitle?: boolean;
 }
 
-const Breadcrumbs = ({ customTitle }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ customTitle, hideTitle }: BreadcrumbsProps) => {
   const location = useLocation();
 
   // Mapping of paths to Romanian titles
@@ -27,7 +28,9 @@ const Breadcrumbs = ({ customTitle }: BreadcrumbsProps) => {
     let currentPath = "";
     pathSegments.forEach(segment => {
       currentPath += `/${segment}`;
-      const title = pathTitles[segment] || segment;
+
+      const decodedSegment = decodeURIComponent(segment);
+      const title = pathTitles[segment] || decodedSegment;
       breadcrumbs.push({ title, path: currentPath });
     });
 
@@ -65,10 +68,12 @@ const Breadcrumbs = ({ customTitle }: BreadcrumbsProps) => {
         ))}
       </div>
 
-      {/* Page Title */}
-      <h1 className="text-3xl !mt-0 md:text-4xl lg:text-5xl font-medium text-dark font-barlow leading-10">
-        {currentPageTitle}
-      </h1>
+      {/* Page Title - only show if hideTitle is false */}
+      {!hideTitle && (
+        <h1 className="text-3xl !mt-0 md:text-4xl lg:text-5xl font-medium text-dark font-barlow leading-10">
+          {currentPageTitle}
+        </h1>
+      )}
     </div>
   );
 };
