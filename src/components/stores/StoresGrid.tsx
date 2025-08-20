@@ -6,13 +6,14 @@ export type Store = {
   phone: string;
   sinceYear: number;
   location: string;
+  workingHours: string[];
 };
 
 const StoresGrid = ({ stores }: { stores: Store[] }) => {
   return (
     <div className="grid lg:grid-cols-2 gap-7">
       {stores.map(store => (
-        <StoreCard key={store.name} store={store} />
+        <StoreCard key={store.address} store={store} />
       ))}
     </div>
   );

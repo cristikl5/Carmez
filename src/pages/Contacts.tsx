@@ -1,4 +1,5 @@
 import ContactForm from "@/components/contact/ContactForm";
+import GoogleMap from "@/components/contact/GoogleMap";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Button from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
@@ -12,9 +13,9 @@ const Contacts = () => {
       <div className="fluid-container">
         <Breadcrumbs />
         <div className="grid sm:grid-cols-2 gap-16">
-          <img
-            src="/images/contacts/map-with-pin.png"
-            alt="Contact us"
+          <GoogleMap
+            width="100%"
+            height="100%"
             className="rounded-3xl object-cover h-full border border-gray-400 overflow-visible"
           />
           <div className="flex flex-col justify-between h-full gap-4">

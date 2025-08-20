@@ -1,20 +1,18 @@
-import { MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
+import GoogleMap from "../contact/GoogleMap";
 import type { Store } from "./StoresGrid";
 
 const StoreCard = ({ store }: { store: Store }) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-10 bg-white p-5 rounded-4xl">
-      <img
-        src={store.location}
-        alt="Locatie"
-        className="object-contain"
-        width={144}
-        height={144}
+    <div className="flex flex-col sm:flex-row gap-6 bg-white p-5 rounded-4xl">
+      <GoogleMap
+        embedUrl={store.location}
+        className="object-contain rounded-[18px]"
       />
-      <div className="space-y-3 ">
+      <div className="space-y-3">
         <div>
           <span className="font-lato font-normal text-gray-400">
-            Since {store.sinceYear}
+            Din {store.sinceYear}
           </span>
           <div className="font-bold text-2xl">{store.name}</div>
         </div>
@@ -30,6 +28,17 @@ const StoreCard = ({ store }: { store: Store }) => {
           <span className="font-lato font-bold text-gray-700">Telefon:</span>
           <span className="font-lato font-normal text-gray-700">
             {store.phone}
+          </span>
+        </div>
+        <div className="flex items-center flex-wrap gap-2">
+          <Clock size={16} className="text-primary" />
+          <span className="font-lato font-bold text-gray-700">Orar:</span>
+          <span className="font-lato font-normal text-gray-700">
+            {store.workingHours.map(hour => (
+              <span key={hour} className="block text-sm whitespace-nowrap">
+                {hour}
+              </span>
+            ))}
           </span>
         </div>
       </div>

@@ -64,8 +64,8 @@ const Header = () => {
           {/* Mobile: Menu button and Cart */}
           <div className="flex items-center gap-3 lg:hidden">
             <div className="flex items-center gap-2">
-              <span className="text-white text-sm font-bold">RU</span>
-              <span className="text-white/60 text-sm">RO</span>
+              <span className="text-white text-sm font-bold">RO</span>
+              <span className="text-white/60 text-sm">RU</span>
             </div>
             <div className="relative">
               <a
@@ -173,8 +173,8 @@ const Header = () => {
         {/* Right side - Language switcher and Cart */}
         <div className="items-center gap-4 hidden lg:flex">
           <div className="flex items-center gap-2">
-            <span className="text-white text-base font-bold">RU</span>
-            <span className="text-white/60 text-base">RO</span>
+            <span className="text-white text-base font-bold">RO</span>
+            <span className="text-white/60 text-base">RU</span>
           </div>
           <div className="relative">
             <a
