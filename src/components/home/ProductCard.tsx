@@ -1,4 +1,4 @@
-type CardProps = {
+export type CardProps = {
   image: string;
   category: string;
   title: string;

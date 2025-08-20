@@ -16,35 +16,35 @@ import { useMemo, useState } from "react";
 const recipes: Recipe[] = [
   {
     image: "/images/recipes/food-1.png",
-    title: "4 Expert Tips On How To Choose The Right Men’s Wallet",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-2.png",
-    title: "Sexy Clutches: How to Buy & Wear a Designer Clutch Bag",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-3.png",
-    title: "The Top 2020 Handbag Trends to Know",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-4.png",
-    title: "How to Match the Color ofYour Handbag With an Outfit",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-5.png",
-    title: "How to Care for Leather Bags",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-6.png",
-    title: "We're Crushing Hard on Summer's 10 Biggest Bag Trends",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-7.png",
-    title: "Essential Qualities of Highly Successful Music",
+    title: "Olivier",
   },
   {
     image: "/images/recipes/food-8.png",
-    title: "9 Things I Love About Shaving My Head",
+    title: "Olivier",
   },
 ];
 
@@ -52,7 +52,7 @@ const Recipes = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredProducts = useMemo(() => {
-    let filtered = recipes.filter(recipe => {
+    const filtered = recipes.filter(recipe => {
       const searchMatch =
         searchTerm === "" ||
         recipe.title.toLowerCase().includes(searchTerm.toLowerCase());

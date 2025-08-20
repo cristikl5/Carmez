@@ -3,12 +3,14 @@ const Button = ({
   children,
   className,
   variant = "primary",
+  size = "md",
   ...props
 }: {
   icon?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
-  variant?: "primary" | "secondary" | "outline" | "icon";
+  variant?: "primary" | "secondary" | "outline" | "icon" | "ghost";
+  size?: "sm" | "md" | "lg" | "icon";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   const getVariantStyles = () => {
     switch (variant) {
@@ -20,15 +22,26 @@ const Button = ({
         return "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white";
       case "icon":
         return "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white border-0 !p-1";
+      case "ghost":
+        return "bg-transparent text-primary hover:bg-primary hover:text-white";
       default:
         return "bg-primary text-white hover:bg-primary/90";
+    }
+  };
+
+  const getSizeStyles = () => {
+    switch (size) {
+      case "icon":
+        return "!p-1";
+      default:
+        return "py-4 px-6 text-base";
     }
   };
 
   return (
     <button
       {...props}
-      className={`py-4 px-6 text-base rounded-xl inline-flex items-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${className}`}
+      className={`py-4 px-6 text-base rounded-xl inline-flex items-center gap-2 font-bold transition-all duration-300 cursor-pointer ${getVariantStyles()} ${getSizeStyles()} ${className}`}
     >
       {children}
       {icon}

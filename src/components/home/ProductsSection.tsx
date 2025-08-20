@@ -1,7 +1,14 @@
 import Button from "../ui/Button";
 import ProductCard from "./ProductCard";
 
-const products = [
+export type Product = {
+  image: string;
+  title: string;
+  category: string;
+  isNew?: boolean;
+};
+
+export const products = [
   {
     image: "/images/products/carnat-1.png",
     title: "Chobani Complete V",
