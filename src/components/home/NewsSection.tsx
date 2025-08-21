@@ -1,40 +1,44 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../ui/Button";
 import HomeNewsCard from "./HomeNewsCard";
 
-const news = [
-  {
-    title: "Retele clasice la masa de Pasti. Din 1904.",
-    buttonText: "Cumpara aici",
-    bgImage: "/images/home-news/carnaciori-1.jpg",
-  },
-  {
-    title: "Retele clasice la masa de Pasti. Din 1904.",
-    buttonText: "Cumpara aici",
-    bgImage: "/images/home-news/carnaciori-2.jpg",
-  },
-  {
-    title: "Retele clasice la masa de Pasti. Din 1904.",
-    buttonText: "Cumpara aici",
-    bgImage: "/images/home-news/carnaciori-3.jpg",
-  },
-  {
-    title: "Retele clasice la masa de Pasti. Din 1904.",
-    buttonText: "Cumpara aici",
-    bgImage: "/images/home-news/carnaciori-3.jpg",
-  },
-  {
-    title: "Retele clasice la masa de Pasti. Din 1904.",
-    buttonText: "Cumpara aici",
-    bgImage: "/images/home-news/carnaciori-3.jpg",
-  },
-];
-
 const NewsSection = () => {
   const swiperRef = useRef<any>(null);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const news = [
+    {
+      title: t("home.news.items.title"),
+      buttonText: t("home.news.items.buttonText"),
+      bgImage: "/images/home-news/carnaciori-1.jpg",
+    },
+    {
+      title: t("home.news.items.title"),
+      buttonText: t("home.news.items.buttonText"),
+      bgImage: "/images/home-news/carnaciori-2.jpg",
+    },
+    {
+      title: t("home.news.items.title"),
+      buttonText: t("home.news.items.buttonText"),
+      bgImage: "/images/home-news/carnaciori-3.jpg",
+    },
+    {
+      title: t("home.news.items.title"),
+      buttonText: t("home.news.items.buttonText"),
+      bgImage: "/images/home-news/carnaciori-3.jpg",
+    },
+    {
+      title: t("home.news.items.title"),
+      buttonText: t("home.news.items.buttonText"),
+      bgImage: "/images/home-news/carnaciori-3.jpg",
+    },
+  ];
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -52,7 +56,7 @@ const NewsSection = () => {
     <section className="py-10 overflow-visible news-section bg-white">
       <div className="fluid-container">
         <h2 className="text-center font-medium text-[32px] font-barlow text-dark">
-          Noutăți
+          {t("home.news.title")}
         </h2>
       </div>
       <div className="swiper-container mt-8 overflow-visible">
@@ -107,8 +111,12 @@ const NewsSection = () => {
           </Button>
         </div>
         <div className="flex items-center justify-center mt-8">
-          <Button variant="outline" className="text-sm md:text-base">
-            Vezi toate
+          <Button
+            variant="outline"
+            className="text-sm md:text-base"
+            onClick={() => navigate("/news")}
+          >
+            {t("home.news.viewAll")}
           </Button>
         </div>
       </div>
