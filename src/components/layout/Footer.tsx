@@ -1,4 +1,5 @@
 import { Clock, Headset, MapPin, PhoneCall, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type InfoItem = {
   title: string;
@@ -14,116 +15,118 @@ type Link = {
   }[];
 };
 
-const infoItems: InfoItem[] = [
-  {
-    title: "Adresa",
-    description: "R. Moldova, or. Chisinau, str. Calea Basarabiei 36/4",
-    icon: <MapPin size={16} className="text-primary" />,
-  },
-  {
-    title: "Tel",
-    description: "0 (22) 78 82 51",
-    icon: <Headset size={16} className="text-primary" />,
-  },
-  {
-    title: "Email",
-    description: "reception@farmmeatgroup.md",
-    icon: <Send size={16} className="text-primary" />,
-  },
-  {
-    title: "Ore de lucru",
-    description: "08:00 - 18:00, Luni - Sâmb",
-    icon: <Clock size={16} className="text-primary" />,
-  },
-];
-
-const links: Link[] = [
-  {
-    title: "Company",
-    urls: [
-      {
-        title: "About us",
-        href: "/",
-      },
-      {
-        title: "Affiliate",
-        href: "/",
-      },
-      {
-        title: "Career",
-        href: "/",
-      },
-      {
-        title: "Contact us",
-        href: "/",
-      },
-    ],
-  },
-  {
-    title: "Categories",
-    urls: [
-      {
-        title: "Milks and Dairies",
-        href: "/",
-      },
-      {
-        title: "Clothing & beauty",
-        href: "/",
-      },
-      {
-        title: "Pet Toy",
-        href: "/",
-      },
-      {
-        title: "Baking material",
-        href: "/",
-      },
-      {
-        title: "Fresh Fruit",
-        href: "/",
-      },
-      {
-        title: "Wines & Drinks",
-        href: "/",
-      },
-    ],
-  },
-  {
-    title: "Information",
-    urls: [
-      {
-        title: "Contact Us",
-        href: "/",
-      },
-      {
-        title: "About Us",
-        href: "/",
-      },
-      {
-        title: "Cookie Policy",
-        href: "/",
-      },
-      {
-        title: "Terms & Conditions",
-        href: "/",
-      },
-      {
-        title: "Returns & Exchanges",
-        href: "/",
-      },
-      {
-        title: "Shipping & Delivery",
-        href: "/",
-      },
-      {
-        title: "Privacy Policy",
-        href: "/",
-      },
-    ],
-  },
-];
-
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const infoItems: InfoItem[] = [
+    {
+      title: t("footer.address"),
+      description: t("footer.infoItems.address"),
+      icon: <MapPin size={16} className="text-primary" />,
+    },
+    {
+      title: t("footer.phone"),
+      description: t("footer.infoItems.phone"),
+      icon: <Headset size={16} className="text-primary" />,
+    },
+    {
+      title: t("footer.email"),
+      description: t("footer.infoItems.email"),
+      icon: <Send size={16} className="text-primary" />,
+    },
+    {
+      title: t("footer.workingHours"),
+      description: t("footer.infoItems.workingHours"),
+      icon: <Clock size={16} className="text-primary" />,
+    },
+  ];
+
+  const links: Link[] = [
+    {
+      title: "company",
+      urls: [
+        {
+          title: t("footer.aboutUs"),
+          href: "/",
+        },
+        {
+          title: t("footer.affiliate"),
+          href: "/",
+        },
+        {
+          title: t("footer.career"),
+          href: "/",
+        },
+        {
+          title: t("footer.contactUs"),
+          href: "/",
+        },
+      ],
+    },
+    {
+      title: "categories",
+      urls: [
+        {
+          title: t("footer.milksDairies"),
+          href: "/",
+        },
+        {
+          title: t("footer.clothingBeauty"),
+          href: "/",
+        },
+        {
+          title: t("footer.petToy"),
+          href: "/",
+        },
+        {
+          title: t("footer.bakingMaterial"),
+          href: "/",
+        },
+        {
+          title: t("footer.freshFruit"),
+          href: "/",
+        },
+        {
+          title: t("footer.winesDrinks"),
+          href: "/",
+        },
+      ],
+    },
+    {
+      title: "information",
+      urls: [
+        {
+          title: t("footer.contactUs"),
+          href: "/",
+        },
+        {
+          title: t("footer.aboutUs"),
+          href: "/",
+        },
+        {
+          title: t("footer.cookiePolicy"),
+          href: "/",
+        },
+        {
+          title: t("footer.termsConditions"),
+          href: "/",
+        },
+        {
+          title: t("footer.returnsExchanges"),
+          href: "/",
+        },
+        {
+          title: t("footer.shippingDelivery"),
+          href: "/",
+        },
+        {
+          title: t("footer.privacyPolicy"),
+          href: "/",
+        },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-white border-t border-primary">
       <div className="py-8 md:py-11 fluid-container">
@@ -137,7 +140,7 @@ const Footer = () => {
               className="object-contain h-12 md:h-auto"
             />
             <p className="font-ibarra text-sm md:text-base font-normal text-primary max-w-[280px] md:max-w-[200px]">
-              Awesome grocery store website template
+              {t("footer.description")}
             </p>
             <div className="space-y-2.5">
               {infoItems.map(link => (
@@ -164,7 +167,7 @@ const Footer = () => {
               {links.map(link => (
                 <div key={link.title} className="space-y-4 lg:space-y-5">
                   <h3 className="font-bold text-base md:text-lg">
-                    {link.title}
+                    {t(`footer.${link.title}`)}
                   </h3>
                   <ul className="space-y-2.5 lg:space-y-3">
                     {link.urls.map(url => (
@@ -194,7 +197,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
             {/* Copyright */}
             <span className="text-gray-500 font-normal text-sm md:text-base text-center md:text-left">
-              Copyright © 2025 Carmez Moldova.
+              {t("footer.copyright")}
             </span>
 
             {/* Phone Info - Desktop */}
@@ -202,10 +205,10 @@ const Footer = () => {
               <PhoneCall size={30} className="text-gray-500" />
               <div className="flex flex-col">
                 <span className="text-primary font-bold text-xl">
-                  0 227 88 251
+                  {t("footer.phoneNumbers.primary")}
                 </span>
                 <span className="text-gray-500 font-normal text-sm">
-                  0 610 61 666
+                  {t("footer.phoneNumbers.secondary")}
                 </span>
               </div>
             </div>
@@ -213,7 +216,7 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex items-center justify-center md:justify-end gap-4 md:gap-6">
               <span className="font-bold text-gray-500 hover:text-primary text-sm md:text-base">
-                Urmărește-ne
+                {t("footer.followUs")}
               </span>
               <a
                 href="https://www.facebook.com/carmez.md"
@@ -247,10 +250,10 @@ const Footer = () => {
             <PhoneCall size={24} className="text-gray-500" />
             <div className="flex flex-col">
               <span className="text-primary font-bold text-lg">
-                0 227 88 251
+                {t("footer.phoneNumbers.primary")}
               </span>
               <span className="text-gray-500 font-normal text-sm">
-                0 610 61 666
+                {t("footer.phoneNumbers.secondary")}
               </span>
             </div>
           </div>

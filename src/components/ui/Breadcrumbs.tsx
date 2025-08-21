@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
 interface BreadcrumbsProps {
@@ -7,23 +8,24 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ customTitle, hideTitle }: BreadcrumbsProps) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
-  // Mapping of paths to Romanian titles
+  // Mapping of paths to localized titles
   const pathTitles: Record<string, string> = {
-    "": "Acasă",
-    "despre-noi": "Despre Noi",
-    news: "Noutăți",
-    catalog: "Catalog",
-    retete: "Rețete",
-    contacte: "Contacte",
-    magazine: "Magazine",
-    produs: "Produs",
+    "": t("breadcrumbs.home"),
+    "despre-noi": t("breadcrumbs.aboutUs"),
+    news: t("breadcrumbs.news"),
+    catalog: t("breadcrumbs.catalog"),
+    retete: t("breadcrumbs.recipes"),
+    contacte: t("breadcrumbs.contacts"),
+    magazine: t("breadcrumbs.stores"),
+    produs: t("breadcrumbs.product"),
   };
 
   // Generate breadcrumb items from current path
   const generateBreadcrumbs = () => {
     const pathSegments = location.pathname.split("/").filter(Boolean);
-    const breadcrumbs = [{ title: "Acasă", path: "/" }];
+    const breadcrumbs = [{ title: t("breadcrumbs.home"), path: "/" }];
 
     let currentPath = "";
     pathSegments.forEach(segment => {

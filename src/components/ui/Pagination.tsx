@@ -32,7 +32,7 @@ const Pagination = ({
         <button
           key={page}
           onClick={() => onPageChange(page)}
-          className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-lg transition-all duration-200 ${
+          className={`w-10 h-10 rounded-full cursor-pointer flex items-center justify-center font-semibold text-lg transition-all duration-200 ${
             page === currentPage
               ? "bg-primary text-white shadow-md"
               : "bg-white text-gray-700 hover:bg-gray-50 "
