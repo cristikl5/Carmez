@@ -32,8 +32,9 @@ const resources = {
       // Home Page
       home: {
         hero: {
-          title: "Retele clasice la masa de Pasti. Din 1904.",
-          subtitle: "pasiune. Tradiție. Gust autentic.",
+          title: "Retele clasice la masa de Pasti.",
+          subtitle: "Din 1904.",
+          description: "pasiune. Tradiție. Gust autentic.",
           button: "Cumpara aici",
         },
         history: {
@@ -364,8 +365,9 @@ const resources = {
       // Home Page
       home: {
         hero: {
-          title: "Классические колбасы на пасхальном столе. С 1904 года.",
-          subtitle: "страсть. традиция. аутентичный вкус.",
+          title: "Классические колбасы на пасхальном столе.",
+          subtitle: "С 1904 года.",
+          description: "страсть. традиция. аутентичный вкус.",
           button: "Купить здесь",
         },
         history: {

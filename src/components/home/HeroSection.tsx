@@ -17,6 +17,8 @@ const HeroSection = () => {
         <div className="flex flex-col gap-8 md:gap-12 lg:gap-[60px] max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
           <h1 className="font-bold !text-3xl sm:!text-4xl md:!text-5xl lg:!text-6xl xl:!text-7xl text-white leading-tight">
             {t("home.hero.title")}
+            <br />
+            {t("home.hero.subtitle")}
           </h1>
           <Button
             variant="secondary"
