@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MomentData {
   years: string[];
@@ -10,19 +11,19 @@ interface MomentData {
 }
 
 const Moments = () => {
-  const [hoveredYear, setHoveredYear] = useState<string>("1941-1944");
+  const [clickedYear, setClickedYear] = useState<string>("1941-1944");
+  const { t } = useTranslation();
 
   const momentsData: Record<string, MomentData> = {
     ACUM: {
       years: ["ACUM"],
-      title: "NOI SUNTEM SPECIALISTI ÎN CARNE",
-      subtitle: "pasiune. Tradiție. Gust autentic.",
-      description:
-        "CARMEZ este un nume de referință în industria cărnii din Republica Moldova. Cu o tradiție care îmbrace în urmă cu peste 25 de ani, producem și iertăm produse din carne proaspete și procesate care respectă cele mai înalte standarde de calitate.",
+      title: t("aboutUs.moments.current.title"),
+      subtitle: t("aboutUs.moments.current.subtitle"),
+      description: t("aboutUs.moments.current.description"),
       image: "/images/about-us/hero.jpg",
       stats: [
-        { number: "150", label: "ANGAJAȚI DEDICAȚI" },
-        { number: "238", label: "PRODUSE" },
+        { number: "150", label: t("aboutUs.moments.current.stats.employees") },
+        { number: "238", label: t("aboutUs.moments.current.stats.products") },
       ],
     },
     "2014": {
@@ -141,23 +142,23 @@ const Moments = () => {
     "1908",
     "1904",
   ];
-  const currentContent = momentsData[hoveredYear];
+  const currentContent = momentsData[clickedYear];
 
   return (
     <section className="py-20">
       <h2 className="text-[32px] text-center font-barlow font-medium text-3xl md:text-4xl lg:text-5xl text-dark">
-        Momente
+        {t("moments.title")}
       </h2>
-      <div className="mt-11 grid sm:grid-cols-2 gap-20">
+      <div className="mt-11 grid sm:grid-cols-2 gap-20 h-[600px]">
         <div className="flex items-center justify-between h-full">
           <ul className="flex flex-col items-baseline justify-between h-full text-sm font-bold list-disc text-gray-500">
             {yearsList.map(year => (
               <li
                 key={year}
                 className={`cursor-pointer transition-colors duration-300 hover:text-primary ${
-                  hoveredYear === year ? "text-black" : ""
+                  clickedYear === year ? "text-black" : ""
                 }`}
-                onClick={() => setHoveredYear(year)}
+                onClick={() => setClickedYear(year)}
               >
                 {year}
               </li>
@@ -166,7 +167,7 @@ const Moments = () => {
           <div className="flex flex-col font-bold items-end relative overflow-hidden">
             {currentContent?.years.map((year, index) => (
               <span
-                key={`${hoveredYear}-${year}-${index}`}
+                key={`${clickedYear}-${year}-${index}`}
                 className={`text-8xl font-barlow transition-all duration-500 ease-out transform ${
                   index === currentContent.years.length - 1
                     ? "text-primary"
@@ -182,7 +183,7 @@ const Moments = () => {
           </div>
         </div>
         <div className="h-full">
-          <div className="transition-all duration-500 ease-out transform animate-fade-in">
+          <div className="transition-all duration-500 ease-out transform animate-fade-in h-full flex flex-col">
             <h2 className="text-2xl font-medium !font-barlow text-primary !leading-8">
               {currentContent?.title}
             </h2>
@@ -191,13 +192,15 @@ const Moments = () => {
                 {currentContent.subtitle}
               </p>
             )}
-            <p className="font-medium mt-5">{currentContent?.description}</p>
+            <div className="h-32 overflow-hidden transition-all duration-300 mt-5">
+              <p className="font-medium">{currentContent?.description}</p>
+            </div>
             {currentContent?.stats && (
               <div className="flex gap-8 mt-6">
                 {currentContent.stats.map(
                   (stat: { number: string; label: string }, index: number) => (
                     <div
-                      key={`${hoveredYear}-stat-${stat.label}-${index}`}
+                      key={`${clickedYear}-stat-${stat.label}-${index}`}
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-primary font-barlow">
@@ -211,11 +214,11 @@ const Moments = () => {
                 )}
               </div>
             )}
-            <div className="mt-7">
+            <div className="mt-7 h-64">
               <img
                 src={currentContent?.image}
                 alt={currentContent?.title}
-                className="w-full h-full object-contain rounded-[18px] transition-opacity duration-500"
+                className="w-full h-full object-cover rounded-[18px] transition-opacity duration-500"
               />
             </div>
           </div>

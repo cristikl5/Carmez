@@ -1,10 +1,13 @@
 import { Menu, ShoppingCart, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import LanguageSwitcher from "../common/LanguageSwitcher";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [animateItems, setAnimateItems] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -63,10 +66,7 @@ const Header = () => {
 
           {/* Mobile: Menu button and Cart */}
           <div className="flex items-center gap-3 lg:hidden">
-            <div className="flex items-center gap-2">
-              <span className="text-white text-sm font-bold">RO</span>
-              <span className="text-white/60 text-sm">RU</span>
-            </div>
+            <LanguageSwitcher />
             <div className="relative">
               <a
                 href="/"
@@ -99,7 +99,7 @@ const Header = () => {
                   }`
                 }
               >
-                Acasă
+                {t("nav.home")}
               </NavLink>
               <NavLink
                 to="/despre-noi"
@@ -109,7 +109,7 @@ const Header = () => {
                   }`
                 }
               >
-                Despre Noi
+                {t("nav.aboutUs")}
               </NavLink>
               <NavLink
                 to="/news"
@@ -119,7 +119,7 @@ const Header = () => {
                   }`
                 }
               >
-                Noutăți
+                {t("nav.news")}
               </NavLink>
             </div>
 
@@ -145,7 +145,7 @@ const Header = () => {
                   }`
                 }
               >
-                Catalog
+                {t("nav.catalog")}
               </NavLink>
               <NavLink
                 to="/retete"
@@ -155,7 +155,7 @@ const Header = () => {
                   }`
                 }
               >
-                Rețete
+                {t("nav.recipes")}
               </NavLink>
               <NavLink
                 to="/contacte"
@@ -165,17 +165,14 @@ const Header = () => {
                   }`
                 }
               >
-                Contacte
+                {t("nav.contacts")}
               </NavLink>
             </div>
           </div>
         </nav>
         {/* Right side - Language switcher and Cart */}
         <div className="items-center gap-4 hidden lg:flex">
-          <div className="flex items-center gap-2">
-            <span className="text-white text-base font-bold">RO</span>
-            <span className="text-white/60 text-base">RU</span>
-          </div>
+          <LanguageSwitcher />
           <div className="relative">
             <a
               href="#"
@@ -211,7 +208,7 @@ const Header = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Acasă
+              {t("nav.home")}
             </NavLink>
             <NavLink
               to="/despre-noi"
@@ -224,7 +221,7 @@ const Header = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Despre Noi
+              {t("nav.aboutUs")}
             </NavLink>
             <NavLink
               to="/news"
@@ -237,7 +234,7 @@ const Header = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Noutăți
+              {t("nav.news")}
             </NavLink>
             <a
               href="/catalog"
@@ -248,7 +245,7 @@ const Header = () => {
               } delay-200`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Catalog
+              {t("nav.catalog")}
             </a>
             <NavLink
               to="/retete"
@@ -261,7 +258,7 @@ const Header = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Rețete
+              {t("nav.recipes")}
             </NavLink>
             <NavLink
               to="/contacte"
@@ -274,7 +271,7 @@ const Header = () => {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Contacte
+              {t("nav.contacts")}
             </NavLink>
 
             {/* Social Media in Mobile Menu */}

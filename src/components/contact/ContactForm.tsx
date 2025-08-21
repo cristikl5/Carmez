@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 const contactFormSchema = z.object({
@@ -59,6 +60,42 @@ const renderFieldError = (error?: { message?: string }) => {
 };
 
 const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
+  const { t } = useTranslation();
+
+  const contactFormSchema = z.object({
+    name: z
+      .string()
+      .min(2, { message: t("contact.form.validation.nameMin") })
+      .max(50, { message: t("contact.form.validation.nameMax") }),
+    email: z
+      .string()
+      .min(1, { message: t("contact.form.validation.emailRequired") })
+      .email({ message: t("contact.form.validation.emailInvalid") }),
+    address: z
+      .string()
+      .min(5, { message: t("contact.form.validation.addressMin") })
+      .max(100, { message: t("contact.form.validation.addressMax") }),
+    phone: z
+      .string()
+      .min(8, {
+        message: t("contact.form.validation.phoneMin"),
+      })
+      .regex(/^[0-9+\-\s()]+$/, {
+        message: t("contact.form.validation.phoneInvalid"),
+      }),
+    subject: z
+      .string()
+      .min(3, { message: t("contact.form.validation.subjectMin") })
+      .max(100, { message: t("contact.form.validation.subjectMax") }),
+    message: z
+      .string()
+      .min(10, { message: t("contact.form.validation.messageMin") })
+      .max(1000, { message: t("contact.form.validation.messageMax") }),
+    termsAccepted: z.boolean().refine(val => val === true, {
+      message: t("contact.form.validation.termsRequired"),
+    }),
+  });
+
   const {
     register,
     handleSubmit,
@@ -85,23 +122,23 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
       } else {
         // Default submission handler
         console.log("Form submitted:", data);
-        alert("Mesajul a fost trimis cu succes!");
+        alert(t("contact.form.successMessage"));
       }
       reset();
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert(
-        "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou."
-      );
+      alert(t("contact.form.errorMessage"));
     }
   };
 
   return (
     <div className={`w-full max-w-2xl mx-auto ${className}`}>
       <div className="text-center mb-8">
-        <h3 className="font-bold text-3xl text-dark">Contactează-ne</h3>
+        <h3 className="font-bold text-3xl text-dark">
+          {t("contact.form.title")}
+        </h3>
         <p className="mt-2.5 text-gray-400 font-lato font-normal text-sm">
-          Hai să discutăm!
+          {t("contact.form.subtitle")}
         </p>
       </div>
 
@@ -112,7 +149,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             <Input
               {...register("name")}
               type="text"
-              placeholder="Numele"
+              placeholder={t("contact.form.fields.name")}
               className={getInputClassName(!!errors.name)}
               aria-invalid={errors.name ? "true" : "false"}
             />
@@ -123,7 +160,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             <Input
               {...register("email")}
               type="email"
-              placeholder="Adresa de E-Mail"
+              placeholder={t("contact.form.fields.email")}
               className={getInputClassName(!!errors.email)}
               aria-invalid={errors.email ? "true" : "false"}
             />
@@ -137,7 +174,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             <Input
               {...register("address")}
               type="text"
-              placeholder="Domiciliul"
+              placeholder={t("contact.form.fields.address")}
               className={getInputClassName(!!errors.address)}
               aria-invalid={errors.address ? "true" : "false"}
             />
@@ -148,7 +185,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             <Input
               {...register("phone")}
               type="tel"
-              placeholder="Telefon"
+              placeholder={t("contact.form.fields.phone")}
               className={getInputClassName(!!errors.phone)}
               aria-invalid={errors.phone ? "true" : "false"}
             />
@@ -161,7 +198,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
           <Input
             {...register("subject")}
             type="text"
-            placeholder="Subiect"
+            placeholder={t("contact.form.fields.subject")}
             className={getInputClassName(!!errors.subject)}
             aria-invalid={errors.subject ? "true" : "false"}
           />
@@ -172,7 +209,7 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
         <div>
           <Textarea
             {...register("message")}
-            placeholder="Mesajul tău..."
+            placeholder={t("contact.form.fields.message")}
             rows={6}
             className={getInputClassName(!!errors.message, "min-h-[120px]")}
             aria-invalid={errors.message ? "true" : "false"}
@@ -196,13 +233,13 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             )}
           />
           <label htmlFor="terms" className="text-sm text-gray-600 font-lato">
-            Sunt deacord cu{" "}
+            {t("contact.form.terms.agree")}{" "}
             <button
               type="button"
               onClick={() => window.open("/terms", "_blank")}
               className="text-primary hover:underline bg-transparent border-none p-0 cursor-pointer"
             >
-              Termenii și Condițiile
+              {t("contact.form.terms.conditions")}
             </button>
           </label>
         </div>
@@ -216,7 +253,9 @@ const ContactForm = ({ onSubmit, className = "" }: ContactFormProps) => {
             disabled={isSubmitting}
             className={`px-8 py-4 ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
           >
-            {isSubmitting ? "Se trimite..." : "Trimite Mesajul"}
+            {isSubmitting
+              ? t("contact.form.submitting")
+              : t("contact.form.submit")}
           </Button>
         </div>
       </form>

@@ -1,7 +1,12 @@
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
 const HistorySection = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <div className="bg-layout pt-10 md:pt-16 lg:pt-20">
       <div className="grid lg:grid-cols-2 gap-8 md:gap-11 items-center fluid-container">
@@ -24,16 +29,14 @@ const HistorySection = () => {
         </div>
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-11 order-1 lg:order-2">
           <span className="text-primary font-bold text-sm md:text-base">
-            Noi suntem Carmez
+            {t("home.history.title")}
           </span>
           <div className="space-y-3 md:space-y-4">
             <h2 className="font-barlow font-medium text-2xl md:text-3xl lg:text-[40px] leading-tight lg:leading-10">
-              Sed ut perspiciatis unde omnis iste natus error
+              {t("home.history.subtitle")}
             </h2>
             <p className="font-normal text-sm md:text-base text-gray-700 leading-relaxed">
-              Istoria companiei datează încă din anul 1904, când în partea de
-              sud-vest a Chișinăului, autoritățile orașului au permis
-              construcţia primului abator privat.
+              {t("home.history.description")}
             </p>
           </div>
           <Button
@@ -43,9 +46,10 @@ const HistorySection = () => {
                 className="text-white md:w-[18px] md:h-[18px]"
               />
             }
+            onClick={() => navigate("/catalog")}
             className="w-fit text-sm md:text-base"
           >
-            Află mai mult
+            {t("home.history.button")}
           </Button>
         </div>
       </div>

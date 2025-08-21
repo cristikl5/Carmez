@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
@@ -7,27 +8,28 @@ export type Motive = {
   description: string;
 };
 
-const motives: Motive[] = [
-  {
-    unitMeasure: "TONE",
-    value: "65",
-    description:
-      "Capacitate de producere zilnicã este de 65 tone de produs prelucrat",
-  },
-  {
-    unitMeasure: "m2",
-    value: "12000",
-    description: "Suprafata totala a producerii si depozitului de marfa",
-  },
-  {
-    unitMeasure: "angajati",
-    value: "650",
-    description: "La moment in cadrul companiei lucreaza 650 de angajati",
-  },
-];
-
 const WhyUsSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const motives: Motive[] = [
+    {
+      unitMeasure: "TONE",
+      value: "65",
+      description: t("home.whyUs.stats.capacity"),
+    },
+    {
+      unitMeasure: "m2",
+      value: "12000",
+      description: t("home.whyUs.stats.area"),
+    },
+    {
+      unitMeasure: "angajati",
+      value: "650",
+      description: t("home.whyUs.stats.employees"),
+    },
+  ];
+
   return (
     <section className="pb-10 bg-white">
       <div className="fluid-container">
@@ -42,7 +44,7 @@ const WhyUsSection = () => {
         >
           <div className="space-y-11">
             <h3 className="text-center font-barlow font-medium text-3xl">
-              De ce Carmez?
+              {t("home.whyUs.title")}
             </h3>
             <div className="grid lg:grid-cols-3 gap-24">
               {motives.map(motive => (
@@ -61,7 +63,7 @@ const WhyUsSection = () => {
             </div>
             <div className="flex items-center justify-center">
               <Button onClick={() => navigate("/catalog")}>
-                Vezi produsele
+                {t("home.whyUs.button")}
               </Button>
             </div>
           </div>

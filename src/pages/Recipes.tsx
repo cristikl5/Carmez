@@ -12,6 +12,7 @@ import {
 
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const recipes: Recipe[] = [
   {
@@ -50,6 +51,7 @@ const recipes: Recipe[] = [
 
 const Recipes = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { t } = useTranslation();
 
   const filteredProducts = useMemo(() => {
     const filtered = recipes.filter(recipe => {
@@ -70,7 +72,7 @@ const Recipes = () => {
           <Breadcrumbs />
           <div className="flex items-end flex-wrap gap-6 w-full sm:w-auto">
             <Input
-              placeholder="Cauta..."
+              placeholder={t("recipes.search")}
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
               className="rounded-[10px] h-11 w-full sm:w-auto"
@@ -78,14 +80,22 @@ const Recipes = () => {
             />
             <Select>
               <SelectTrigger className="w-full !h-11 sm:w-[180px] rounded-[10px] border-gray-400">
-                <SelectValue placeholder="Sort" />
+                <SelectValue placeholder={t("recipes.sort")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="newest">Newest</SelectItem>
-                  <SelectItem value="oldest">Oldest</SelectItem>
-                  <SelectItem value="most-viewed">Most viewed</SelectItem>
-                  <SelectItem value="least-viewed">Least viewed</SelectItem>
+                  <SelectItem value="newest">
+                    {t("recipes.sortOptions.newest")}
+                  </SelectItem>
+                  <SelectItem value="oldest">
+                    {t("recipes.sortOptions.oldest")}
+                  </SelectItem>
+                  <SelectItem value="most-viewed">
+                    {t("recipes.sortOptions.mostViewed")}
+                  </SelectItem>
+                  <SelectItem value="least-viewed">
+                    {t("recipes.sortOptions.leastViewed")}
+                  </SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
