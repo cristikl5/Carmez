@@ -10,7 +10,7 @@ interface MomentData {
 }
 
 const Moments = () => {
-  const [hoveredYear, setHoveredYear] = useState<string>("1941-1944");
+  const [clickedYear, setClickedYear] = useState<string>("1941-1944");
 
   const momentsData: Record<string, MomentData> = {
     ACUM: {
@@ -141,7 +141,7 @@ const Moments = () => {
     "1908",
     "1904",
   ];
-  const currentContent = momentsData[hoveredYear];
+  const currentContent = momentsData[clickedYear];
 
   return (
     <section className="py-20">
@@ -155,9 +155,9 @@ const Moments = () => {
               <li
                 key={year}
                 className={`cursor-pointer transition-colors duration-300 hover:text-primary ${
-                  hoveredYear === year ? "text-black" : ""
+                  clickedYear === year ? "text-black" : ""
                 }`}
-                onClick={() => setHoveredYear(year)}
+                onClick={() => setClickedYear(year)}
               >
                 {year}
               </li>
@@ -166,7 +166,7 @@ const Moments = () => {
           <div className="flex flex-col font-bold items-end relative overflow-hidden">
             {currentContent?.years.map((year, index) => (
               <span
-                key={`${hoveredYear}-${year}-${index}`}
+                key={`${clickedYear}-${year}-${index}`}
                 className={`text-8xl font-barlow transition-all duration-500 ease-out transform ${
                   index === currentContent.years.length - 1
                     ? "text-primary"
@@ -197,7 +197,7 @@ const Moments = () => {
                 {currentContent.stats.map(
                   (stat: { number: string; label: string }, index: number) => (
                     <div
-                      key={`${hoveredYear}-stat-${stat.label}-${index}`}
+                      key={`${clickedYear}-stat-${stat.label}-${index}`}
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-primary font-barlow">

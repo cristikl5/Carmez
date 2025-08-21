@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
 import Button from "../ui/Button";
 
@@ -57,6 +58,7 @@ export const products = [
 ];
 
 const ProductsSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-layout py-10">
       <div className="fluid-container">
@@ -70,7 +72,11 @@ const ProductsSection = () => {
             ))}
           </div>
           <div className="flex items-center justify-center">
-            <Button variant="outline" className="text-sm md:text-base">
+            <Button
+              variant="outline"
+              className="text-sm md:text-base"
+              onClick={() => navigate("/catalog")}
+            >
               Vezi toate
             </Button>
           </div>

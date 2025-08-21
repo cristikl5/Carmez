@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../ui/Button";
@@ -35,6 +36,7 @@ const news = [
 
 const NewsSection = () => {
   const swiperRef = useRef<any>(null);
+  const navigate = useNavigate();
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -107,7 +109,11 @@ const NewsSection = () => {
           </Button>
         </div>
         <div className="flex items-center justify-center mt-8">
-          <Button variant="outline" className="text-sm md:text-base">
+          <Button
+            variant="outline"
+            className="text-sm md:text-base"
+            onClick={() => navigate("/news")}
+          >
             Vezi toate
           </Button>
         </div>

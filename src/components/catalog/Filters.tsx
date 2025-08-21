@@ -137,7 +137,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
             />
             <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
               <span>2 Luni</span>
-              <span className="font-medium">
+              <span className="font-semibold">
                 {formatValue(watchedValues.expirationDate || 0)}
               </span>
               <span>5 Ani</span>

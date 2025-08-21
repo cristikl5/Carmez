@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 
 const HistorySection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-layout pt-10 md:pt-16 lg:pt-20">
       <div className="grid lg:grid-cols-2 gap-8 md:gap-11 items-center fluid-container">
@@ -43,6 +46,7 @@ const HistorySection = () => {
                 className="text-white md:w-[18px] md:h-[18px]"
               />
             }
+            onClick={() => navigate("/catalog")}
             className="w-fit text-sm md:text-base"
           >
             Află mai mult

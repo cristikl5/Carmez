@@ -11,7 +11,7 @@ export type Store = {
 
 const StoresGrid = ({ stores }: { stores: Store[] }) => {
   return (
-    <div className="grid lg:grid-cols-2 gap-7">
+    <div className="grid gap-7">
       {stores.map(store => (
         <StoreCard key={store.address} store={store} />
       ))}
