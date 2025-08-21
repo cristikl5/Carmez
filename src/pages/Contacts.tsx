@@ -3,10 +3,12 @@ import GoogleMap from "@/components/contact/GoogleMap";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import Button from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const Contacts = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="py-24 sm:py-36">
@@ -20,23 +22,27 @@ const Contacts = () => {
           />
           <div className="flex flex-col justify-between h-full gap-4">
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-bold text-primary">Oficiu</h4>
+              <h4 className="text-2xl font-bold text-primary">
+                {t("contacts.office")}
+              </h4>
               <p className="text-gray-600 font-normal font-lato">
-                R. Moldova, or. Chișinău, str. Calea Basarabiei, 36/4
+                {t("contacts.address")}
                 <br />
-                Telefon: 0(22) 78 82 51
+                {t("contacts.phone")}
                 <br />
-                Email: reception@carmez.md
+                {t("contacts.email")}
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-2xl font-bold text-primary">Fabrica</h4>
+              <h4 className="text-2xl font-bold text-primary">
+                {t("contacts.factory")}
+              </h4>
               <p className="text-gray-600 font-normal font-lato">
-                R. Moldova, or. Chișinău, str. Calea Basarabiei, 36/4
+                {t("contacts.address")}
                 <br />
-                Telefon: 0(22) 78 82 51
+                {t("contacts.phone")}
                 <br />
-                Email: reception@carmez.md
+                {t("contacts.email")}
               </p>
             </div>
             <Button
@@ -45,7 +51,7 @@ const Contacts = () => {
               onClick={() => navigate("/contacte/magazine")}
               icon={<ArrowRight size={20} />}
             >
-              Toate magazinele
+              {t("contacts.allStores")}
             </Button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MomentData {
   years: string[];
@@ -11,18 +12,18 @@ interface MomentData {
 
 const Moments = () => {
   const [clickedYear, setClickedYear] = useState<string>("1941-1944");
+  const { t } = useTranslation();
 
   const momentsData: Record<string, MomentData> = {
     ACUM: {
       years: ["ACUM"],
-      title: "NOI SUNTEM SPECIALISTI ÎN CARNE",
-      subtitle: "pasiune. Tradiție. Gust autentic.",
-      description:
-        "CARMEZ este un nume de referință în industria cărnii din Republica Moldova. Cu o tradiție care îmbrace în urmă cu peste 25 de ani, producem și iertăm produse din carne proaspete și procesate care respectă cele mai înalte standarde de calitate.",
+      title: t("aboutUs.moments.current.title"),
+      subtitle: t("aboutUs.moments.current.subtitle"),
+      description: t("aboutUs.moments.current.description"),
       image: "/images/about-us/hero.jpg",
       stats: [
-        { number: "150", label: "ANGAJAȚI DEDICAȚI" },
-        { number: "238", label: "PRODUSE" },
+        { number: "150", label: t("aboutUs.moments.current.stats.employees") },
+        { number: "238", label: t("aboutUs.moments.current.stats.products") },
       ],
     },
     "2014": {
@@ -146,9 +147,9 @@ const Moments = () => {
   return (
     <section className="py-20">
       <h2 className="text-[32px] text-center font-barlow font-medium text-3xl md:text-4xl lg:text-5xl text-dark">
-        Momente
+        {t("moments.title")}
       </h2>
-      <div className="mt-11 grid sm:grid-cols-2 gap-20">
+      <div className="mt-11 grid sm:grid-cols-2 gap-20 h-[600px]">
         <div className="flex items-center justify-between h-full">
           <ul className="flex flex-col items-baseline justify-between h-full text-sm font-bold list-disc text-gray-500">
             {yearsList.map(year => (
@@ -182,7 +183,7 @@ const Moments = () => {
           </div>
         </div>
         <div className="h-full">
-          <div className="transition-all duration-500 ease-out transform animate-fade-in">
+          <div className="transition-all duration-500 ease-out transform animate-fade-in h-full flex flex-col">
             <h2 className="text-2xl font-medium !font-barlow text-primary !leading-8">
               {currentContent?.title}
             </h2>
@@ -191,7 +192,9 @@ const Moments = () => {
                 {currentContent.subtitle}
               </p>
             )}
-            <p className="font-medium mt-5">{currentContent?.description}</p>
+            <div className="h-32 overflow-hidden transition-all duration-300 mt-5">
+              <p className="font-medium">{currentContent?.description}</p>
+            </div>
             {currentContent?.stats && (
               <div className="flex gap-8 mt-6">
                 {currentContent.stats.map(
@@ -211,11 +214,11 @@ const Moments = () => {
                 )}
               </div>
             )}
-            <div className="mt-7">
+            <div className="mt-7 h-64">
               <img
                 src={currentContent?.image}
                 alt={currentContent?.title}
-                className="w-full h-full object-contain rounded-[18px] transition-opacity duration-500"
+                className="w-full h-full object-cover rounded-[18px] transition-opacity duration-500"
               />
             </div>
           </div>

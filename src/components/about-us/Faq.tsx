@@ -1,51 +1,44 @@
+import { useTranslation } from "react-i18next";
 import FaqCard from "./FaqCard";
 
-const questions = [
-  {
-    title:
-      "Care sunt cele mai potrivite condimente pentru fiecare tip de carne?",
-    description:
-      "Pentru carne de porc puteți folosi cu încredere rozmarin, busuioc, coriandru, cimbru, chimen sau mentă.",
-  },
-  {
-    title:
-      "Care materia primã se utilizeazã pentru producerea mezelurilor sau specialitãtilor afumate din carne?",
-    description:
-      "Pentru producerea mezelurilor sau specialitãtilor afumate din carne se utilizeazã carne de porc, carne de vitã, carne de gãinã, carne de miel, carne de pui, carne de curcan, carne de porc, carne de vitã, carne de gãinã, carne de miel, carne de pui, carne de curcan.",
-  },
-  {
-    title: "Cum se afumă carnea si specialitätile din carne?",
-    description:
-      "Pentru producerea mezelurilor sau specialitãtilor afumate din carne se utilizeazã carne de porc, carne de vitã, carne de gãinã, carne de miel, carne de pui, carne de curcan, carne de porc, carne de vitã, carne de gãinã, carne de miel, carne de pui, carne de curcan.",
-  },
-  {
-    title: "Care este diferenta între salamul semi-afumat si fiert-afumat?",
-    description:
-      "Salamul semi-afumat este un produs care este afumat, dar nu este fierbere, iar salamul fiert-afumat este un produs care este fierbere, dar nu este afumat.",
-  },
-  {
-    title: "Care este diferenta între salamul semi-afumat si fiert-afumat?",
-    description:
-      "Salamul semi-afumat este un produs care este afumat, dar nu este fierbere, iar salamul fiert-afumat este un produs care este fierbere, dar nu este afumat.",
-  },
-  {
-    title: "Cum se fierb corect crenvurstile si safaladele?",
-    description:
-      "Salamul semi-afumat este un produs care este afumat, dar nu este fierbere, iar salamul fiert-afumat este un produs care este fierbere, dar nu este afumat.",
-  },
-];
-
 const Faq = () => {
+  const { t } = useTranslation();
+
+  const questions = [
+    {
+      title: t("faq.questions.q1"),
+      description: t("faq.questions.a1"),
+    },
+    {
+      title: t("faq.questions.q2"),
+      description: t("faq.questions.a2"),
+    },
+    {
+      title: t("faq.questions.q3"),
+      description: t("faq.questions.a3"),
+    },
+    {
+      title: t("faq.questions.q4"),
+      description: t("faq.questions.a4"),
+    },
+    {
+      title: t("faq.questions.q5"),
+      description: t("faq.questions.a5"),
+    },
+  ];
+
   return (
     <section className="py-20">
       <div className="flex items-center justify-center">
         <div className="space-y-2 text-center">
-          <span className="text-primary font-semibold text-lg">FAQ</span>
+          <span className="text-primary font-semibold text-lg">
+            {t("faq.title")}
+          </span>
           <h3 className="font-bold text-[40px] leading-12">
-            Întrebări Frecvente
+            {t("faq.subtitle")}
           </h3>
           <span className="text-gray-500 font-normal">
-            Cele mai frecvente întrebări adresate
+            {t("faq.description")}
           </span>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import Button from "../ui/Button";
 import { Checkbox } from "../ui/checkbox";
@@ -28,6 +29,7 @@ interface FiltersProps {
 }
 
 const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
+  const { t } = useTranslation();
   const { handleSubmit, control, watch, reset } = useForm<FiltersFormData>({
     resolver: zodResolver(filtersFormSchema),
     defaultValues: {
@@ -76,7 +78,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
         <div className="flex items-center gap-4 sm:gap-6 flex-col lg:flex-row w-full lg:w-auto">
           <div className="w-full lg:w-auto">
             <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
-              Tipul de carne
+              {t("filters.meatType")}
             </Label>
             <Controller
               name="meatType"
@@ -84,12 +86,12 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               render={({ field }) => (
                 <Select onValueChange={field.onChange} value={field.value}>
                   <SelectTrigger className="w-full lg:min-w-[180px] border-gray-400 h-12 sm:h-10">
-                    <SelectValue placeholder="Carne de porc" />
+                    <SelectValue placeholder={t("filters.pork")} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="porc">Carne de porc</SelectItem>
-                    <SelectItem value="vita">Carne de vita</SelectItem>
-                    <SelectItem value="pui">Carne de pui</SelectItem>
+                    <SelectItem value="porc">{t("filters.pork")}</SelectItem>
+                    <SelectItem value="vita">{t("filters.beef")}</SelectItem>
+                    <SelectItem value="pui">{t("filters.chicken")}</SelectItem>
                   </SelectContent>
                 </Select>
               )}
@@ -97,7 +99,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
           </div>
           <div className="w-full lg:w-auto">
             <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
-              Categorie de produse
+              {t("filters.productCategory")}
             </Label>
             <Controller
               name="productCategory"
@@ -105,12 +107,18 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               render={({ field }) => (
                 <Select onValueChange={field.onChange} value={field.value}>
                   <SelectTrigger className="w-full lg:min-w-[232px] border-gray-400 h-12 sm:h-10">
-                    <SelectValue placeholder="Carnat" />
+                    <SelectValue placeholder={t("filters.carnat")} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="carnat">Carnat</SelectItem>
-                    <SelectItem value="ciorba">Ciorba de burta</SelectItem>
-                    <SelectItem value="conserve">Conserve</SelectItem>
+                    <SelectItem value="carnat">
+                      {t("filters.carnat")}
+                    </SelectItem>
+                    <SelectItem value="ciorba">
+                      {t("filters.ciorba")}
+                    </SelectItem>
+                    <SelectItem value="conserve">
+                      {t("filters.conserve")}
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               )}
@@ -118,7 +126,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
           </div>
           <div className="w-full lg:w-auto">
             <Label className="text-xs text-gray-400 font-medium font-lato mb-2 block">
-              Data de expirare a produsului
+              {t("filters.expirationDate")}
             </Label>
             <Controller
               name="expirationDate"
@@ -136,11 +144,11 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               )}
             />
             <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
-              <span>2 Luni</span>
+              <span>2 {t("filters.months")}</span>
               <span className="font-semibold">
                 {formatValue(watchedValues.expirationDate || 0)}
               </span>
-              <span>5 Ani</span>
+              <span>5 {t("filters.years")}</span>
             </div>
           </div>
           <div className="flex items-center gap-3 whitespace-nowrap w-full lg:w-auto justify-center lg:justify-start">
@@ -160,7 +168,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               htmlFor="newProduct"
               className="text-sm text-gray-600 font-lato cursor-pointer"
             >
-              Produs nou
+              {t("filters.newProduct")}
             </Label>
           </div>
         </div>
@@ -171,7 +179,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
             className="w-full lg:w-auto h-12 sm:h-10 text-sm"
             onClick={handleReset}
           >
-            Resetare
+            {t("filters.reset")}
           </Button>
         </div>
       </div>

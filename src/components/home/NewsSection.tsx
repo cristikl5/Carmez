@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,6 +38,7 @@ const news = [
 const NewsSection = () => {
   const swiperRef = useRef<any>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -54,7 +56,7 @@ const NewsSection = () => {
     <section className="py-10 overflow-visible news-section bg-white">
       <div className="fluid-container">
         <h2 className="text-center font-medium text-[32px] font-barlow text-dark">
-          Noutăți
+          {t("home.news.title")}
         </h2>
       </div>
       <div className="swiper-container mt-8 overflow-visible">
@@ -114,7 +116,7 @@ const NewsSection = () => {
             className="text-sm md:text-base"
             onClick={() => navigate("/news")}
           >
-            Vezi toate
+            {t("home.news.viewAll")}
           </Button>
         </div>
       </div>
