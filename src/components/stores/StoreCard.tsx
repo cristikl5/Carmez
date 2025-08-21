@@ -33,6 +33,8 @@ const StoreCard = ({ store }: { store: Store }) => {
         <div className="flex items-center flex-wrap gap-2">
           <Clock size={16} className="text-primary" />
           <span className="font-lato font-bold text-gray-700">Orar:</span>
+        </div>
+        <div className="flex flex-col">
           <span className="font-lato font-normal text-gray-700">
             {store.workingHours.map(hour => (
               <span key={hour} className="block text-sm whitespace-nowrap">

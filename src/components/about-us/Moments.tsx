@@ -150,7 +150,7 @@ const Moments = () => {
         {t("moments.title")}
       </h2>
       <div className="mt-11 grid sm:grid-cols-2 gap-20 h-[600px]">
-        <div className="flex items-center justify-between h-full">
+        <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between h-full">
           <ul className="flex flex-col items-baseline justify-between h-full text-sm font-bold list-disc text-gray-500">
             {yearsList.map(year => (
               <li
@@ -164,7 +164,7 @@ const Moments = () => {
               </li>
             ))}
           </ul>
-          <div className="flex flex-col font-bold items-end relative overflow-hidden">
+          <div className="flex flex-col font-bold items-start sm:items-end relative mt-5 sm:mt-0">
             {currentContent?.years.map((year, index) => (
               <span
                 key={`${clickedYear}-${year}-${index}`}

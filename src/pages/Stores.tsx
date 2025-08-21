@@ -112,7 +112,7 @@ const Stores = () => {
   return (
     <div className="py-24 sm:py-36">
       <div className="fluid-container">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <Breadcrumbs />
           <Input
             placeholder={t("stores.search")}
@@ -122,7 +122,7 @@ const Stores = () => {
             onChange={e => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="mt-8">
+        <div className="mt-4">
           <StoresGrid stores={filteredStores} />
         </div>
       </div>

@@ -14,11 +14,10 @@ const Contacts = () => {
     <div className="py-24 sm:py-36">
       <div className="fluid-container">
         <Breadcrumbs />
-        <div className="grid sm:grid-cols-2 gap-16">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-16">
           <GoogleMap
             width="100%"
-            height="100%"
-            className="rounded-3xl object-cover h-full border border-gray-400 overflow-visible"
+            className="rounded-3xl object-cover border border-gray-400 overflow-visible "
           />
           <div className="flex flex-col justify-between h-full gap-4">
             <div className="flex flex-col gap-4">

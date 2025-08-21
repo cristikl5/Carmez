@@ -16,8 +16,8 @@ const NewsDetails = () => {
   return (
     <section className="py-24 sm:py-36">
       <div className="fluid-container">
-        <Breadcrumbs hideTitle />
         <div className="details-fluid-container">
+          <Breadcrumbs hideTitle />
           <div className="space-y-5">
             <h1 className="font-semibold font-barlow text-4xl">{title}</h1>
             <span className="font-normal text-sm text-gray-400">

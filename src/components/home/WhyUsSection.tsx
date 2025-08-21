@@ -49,7 +49,7 @@ const WhyUsSection = () => {
             <div className="grid lg:grid-cols-3 gap-24">
               {motives.map(motive => (
                 <div key={motive.description}>
-                  <h4 className="text-center font-barlow font-bold text-9xl">
+                  <h4 className="text-center font-barlow font-bold text-7xl lg:text-9xl">
                     {motive.value}
                     <span className="text-lg font-barlow font-bold">
                       {motive.unitMeasure}

@@ -90,12 +90,15 @@ const RecipeDetails = () => {
           </div>
         </div>
         <div className="mt-28">
-          <div className="flex items-center justify-between">
+          <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between">
             <h3 className="font-medium text-3xl font-barlow">
               Produse din rețetă
             </h3>
             <div className="flex items-center gap-6">
-              <Button variant="ghost" className="font-bold whitespace-nowrap">
+              <Button
+                variant="ghost"
+                className="font-bold whitespace-nowrap pl-0 sm:pl-6"
+              >
                 Vezi pe toate
               </Button>
               <div className="flex items-center gap-1">
