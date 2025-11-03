@@ -26,108 +26,109 @@ const Moments = () => {
         { number: "238", label: t("aboutUs.moments.current.stats.products") },
       ],
     },
+    "2019": {
+      years: ["2019"],
+      title: t("aboutUs.moments.2019.title"),
+      description: t("aboutUs.moments.2019.description"),
+      image: "/images/about-us/hero.jpg",
+    },
     "2014": {
       years: ["2014"],
-      title: "EXTINDERE NAȚIONALĂ",
-      description:
-        "Extinderea rețelei de distribuție la nivel național și modernizarea facilităților de producție.",
+      title: t("aboutUs.moments.2014.title"),
+      description: t("aboutUs.moments.2014.description"),
+      image: "/images/about-us/hero.jpg",
+    },
+    "2013": {
+      years: ["2013"],
+      title: t("aboutUs.moments.2013.title"),
+      description: t("aboutUs.moments.2013.description"),
       image: "/images/about-us/hero.jpg",
     },
     "2008": {
       years: ["2008"],
-      title: "MODERNIZARE",
-      description:
-        "Implementarea tehnologiilor moderne de producție și certificarea conform standardelor europene.",
+      title: t("aboutUs.moments.2008.title"),
+      description: t("aboutUs.moments.2008.description"),
       image: "/images/about-us/hero.jpg",
     },
     "2004": {
       years: ["2004"],
-      title: "DEZVOLTARE",
-      description:
-        "Lansarea primelor produse premium și extinderea gamei de produse.",
+      title: t("aboutUs.moments.2004.title"),
+      description: t("aboutUs.moments.2004.description"),
       image: "/images/about-us/hero.jpg",
     },
     "2000": {
       years: ["2000"],
-      title: "MILENIUL NOU",
-      description:
-        "Intrarea în noul mileniu cu planuri ambițioase de dezvoltare.",
+      title: t("aboutUs.moments.2000.title"),
+      description: t("aboutUs.moments.2000.description"),
       image: "/images/about-us/hero.jpg",
     },
     "1999": {
       years: ["1999"],
-      title: "CONSOLIDARE",
-      description:
-        "Consolidarea poziției pe piața locală și îmbunătățirea proceselor.",
+      title: t("aboutUs.moments.1999.title"),
+      description: t("aboutUs.moments.1999.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1991": {
       years: ["1991"],
-      title: "INDEPENDENȚA",
-      description:
-        "Adaptarea la noile realități de piață după independența Moldovei.",
+      title: t("aboutUs.moments.1991.title"),
+      description: t("aboutUs.moments.1991.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1988": {
       years: ["1988"],
-      title: "TRANSFORMARE",
-      description:
-        "Perioada de transformări importante în organizarea producției.",
+      title: t("aboutUs.moments.1988.title"),
+      description: t("aboutUs.moments.1988.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1970-1985": {
       years: ["1970-1985"],
-      title: "CREȘTERE SUSȚINUTĂ",
-      description:
-        "Perioada de creștere și dezvoltare susținută a capacităților de producție.",
+      title: t("aboutUs.moments.1970-1985.title"),
+      description: t("aboutUs.moments.1970-1985.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1964": {
       years: ["1964"],
-      title: "DEZVOLTARE",
-      description:
-        "Continuarea dezvoltării și îmbunătățirea tehnologiilor de producție.",
+      title: t("aboutUs.moments.1964.title"),
+      description: t("aboutUs.moments.1964.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1955": {
       years: ["1955"],
-      title: "STABILIZARE",
-      description: "Stabilizarea activității și consolidarea echipei de lucru.",
+      title: t("aboutUs.moments.1955.title"),
+      description: t("aboutUs.moments.1955.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1947": {
       years: ["1947"],
-      title: "RECONSTRUIRE",
-      description:
-        "Perioada de reconstruire după război și relansarea activității.",
+      title: t("aboutUs.moments.1947.title"),
+      description: t("aboutUs.moments.1947.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1941-1944": {
       years: ["1941-1944"],
-      title: "RECONSTRUIRE",
-      description:
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      title: t("aboutUs.moments.1941-1944.title"),
+      description: t("aboutUs.moments.1941-1944.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1908": {
       years: ["1908"],
-      title: "ÎNCEPUTURI",
-      description:
-        "Primii pași în industria cărnii și stabilirea bazelor pentru viitor.",
+      title: t("aboutUs.moments.1908.title"),
+      description: t("aboutUs.moments.1908.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1904": {
       years: ["1904"],
-      title: "FONDAREA",
-      description:
-        "Fondarea companiei și începutul unei tradiții de peste un secol.",
+      title: t("aboutUs.moments.1904.title"),
+      description: t("aboutUs.moments.1904.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
   };
 
   const yearsList = [
     "ACUM",
+    "2019",
     "2014",
+    "2013",
     "2008",
     "2004",
     "2000",

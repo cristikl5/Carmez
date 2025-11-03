@@ -72,7 +72,7 @@ const resources = {
       // About Us Page
       aboutUs: {
         description:
-          "CARMEZ este un nume de referință în industria cărnii din Republica Moldova. Cu o tradiție care începe în urmă cu peste 25 de ani, producem și livrăm produse din carne proaspete și procesate care respectă cele mai înalte standarde de calitate.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+          'Istoria companiei datează încă din anul 1904, când în partea de sud-vest a Chișinăului, autoritățile orașului au permis construcția primului abator privat, cu o suprafață de doar 2576 m2. Timp de trei decenii, întreprinderea a funcționat și s-a dezvoltat cu pași încrezători, au fost extinse capacitățile de producție și a fost construită propria fântână arteziană.\n\nConstrucția întreprinderii moderne începe în anul 1947. Până la începutul noului deceniu, au fost construite două frigidere noi, cu o suprafață de 1000 și 2000 m2. În același timp, a fost aprobat planul pentru construcția unei noi secții de producere a mezelurilor.\n\nTimp de trei decenii, întreprinderea a continuat să-și perfecționeze capacitățile de producere, să-și modernizeze secțiile existente și să-și îmbunătățească politica de personal a companiei.\n\nDupă destrămarea URSS, apare SA "Carmez", producând produse din carne până în anul 2013, când, ca urmare a fuziunii cu compania "Carmez International", are loc o reorganizare structurală completă, cu revizuirea sortimentului de produse fabricate, cu modernizarea proceselor de producere și ambalare a produselor finite.\n\nÎn 2019 este dată în exploatare o secție nouă de producere și un centru de logistică, cu o suprafață totală de 10000 m2, care respectă normele sanitare aprobate și standardele europene de calitate și siguranță a produselor alimentare, ceea ce este confirmat prin certificarea companiei standartelor ISO 22000:2018.\n\nAstăzi, "Carmez Processing" este cea mai mare și cea mai modernă întreprindere de pe teritoriul Republicii Moldova în industria, construită cu ajutorul experților străini special invitați. Capacitatea de producție este de 80 de tone de produse finite pe zi, iar rețeaua de logistică proprie, formată din mai mult de 60 de camioane echipate cu sisteme de răcire, ne permite să livrăm zilnic produse pe întreg teritoriul Republicii Moldova.',
         moments: {
           current: {
             title: "NOI SUNTEM SPECIALISTI ÎN CARNE",
@@ -112,7 +112,7 @@ const resources = {
           "1991": {
             title: "INDEPENDENȚA",
             description:
-              "Începutul activității companiei în perioada post-sovietică.",
+              'După destrămarea URSS, apare SA "Carmez", producând produse din carne până în anul 2013.',
           },
           "1988": {
             title: "TRANSFORMARE",
@@ -120,9 +120,9 @@ const resources = {
               "Perioada de transformări importante în organizarea producției.",
           },
           "1970-1985": {
-            title: "CREȘTERE SUSȚINUTĂ",
+            title: "PERFECȚIONARE ȘI MODERNIZARE",
             description:
-              "Perioada de creștere și dezvoltare susținută a capacităților de producție.",
+              "Timp de trei decenii, întreprinderea a continuat să-și perfecționeze capacitățile de producere, să-și modernizeze secțiile existente și să-și îmbunătățească politica de personal a companiei.",
           },
           "1964": {
             title: "DEZVOLTARE",
@@ -137,12 +137,12 @@ const resources = {
           "1947": {
             title: "RECONSTRUIRE",
             description:
-              "Perioada de reconstruire după război și relansarea activității.",
+              "Construcția întreprinderii moderne începe în anul 1947. Până la începutul noului deceniu, au fost construite două frigidere noi, cu o suprafață de 1000 și 2000 m2. În același timp, a fost aprobat planul pentru construcția unei noi secții de producere a mezelurilor.",
           },
           "1941-1944": {
-            title: "RECONSTRUIRE",
+            title: "PERIOADA DE RĂZBOI",
             description:
-              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+              "Perioada dificilă a celui de-al Doilea Război Mondial, care a afectat activitățile întreprinderii.",
           },
           "1908": {
             title: "ÎNCEPUTURI",
@@ -152,7 +152,17 @@ const resources = {
           "1904": {
             title: "FONDAREA",
             description:
-              "Fondarea companiei și începutul unei tradiții de peste un secol.",
+              "În partea de sud-vest a Chișinăului, autoritățile orașului au permis construcția primului abator privat, cu o suprafață de doar 2576 m2. Timp de trei decenii, întreprinderea a funcționat și s-a dezvoltat cu pași încrezători, au fost extinse capacitățile de producție și a fost construită propria fântână arteziană.",
+          },
+          "2019": {
+            title: "MODERNIZARE ȘI EXTINDERE",
+            description:
+              "Este dată în exploatare o secție nouă de producere și un centru de logistică, cu o suprafață totală de 10000 m2, care respectă normele sanitare aprobate și standardele europene de calitate și siguranță a produselor alimentare, ceea ce este confirmat prin certificarea companiei standartelor ISO 22000:2018.",
+          },
+          "2013": {
+            title: "REORGANIZARE STRUCTURALĂ",
+            description:
+              'Ca urmare a fuziunii cu compania "Carmez International", are loc o reorganizare structurală completă, cu revizuirea sortimentului de produse fabricate, cu modernizarea proceselor de producere și ambalare a produselor finite.',
           },
         },
       },
@@ -421,7 +431,7 @@ const resources = {
       // About Us Page
       aboutUs: {
         description:
-          "КАРМЕЗ - это имя-синоним в мясной промышленности Республики Молдова. С традицией, которая началась более 25 лет назад, мы производим и поставляем свежие и переработанные мясные продукты, которые соответствуют самым высоким стандартам качества.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+          'История предприятия начинается ещё в 1904 году, когда, в юго-западной части Кишинёва, городские власти разрешают строительство первой частной бойни, площадью всего 2576 м2. На протяжении трёх десятилетий, предприятие функционировало и развивалось уверенными шагами, расширялись производственные мощности, была построена собственная водонапорная башня, пробурены водяные скважины.\n\nСтроительство современного завода начинается в 1947 году. К началу нового десятилетия, были построены два новых холодильника, площадью 1000 и 2000м2. В это же время, был утвержден план строительства нового колбасного цеха. Последующие тридцать лет, предприятие продолжает совершенствование производственных мощностей, модернизацию действующих цехов, улучшение кадровой политики предприятия.\n\nПосле развала СССР, появляется АО «Кармез», производящее мясную продукцию до 2013 года, когда, в следствие слияния с компанией "Carmez International", происходит полная структурная реорганизация, пересматривается ассортимент выпускаемой продукции, усовершенствуются процессы производства и упаковки готового продукта.\n\nВ 2019 году сдаётся в эксплуатацию абсолютно новое производство и логистический центр, общей площадью в 10000м2, соответствующие утвержденным санитарным нормам и европейским стандартам качества и безопасности пищевых продуктов, что подтверждает сертификация предприятия стандартам ISO 22000:2018.\n\nНа сегодняшний день, "Carmez Processing" является крупнейшим и самым современным предприятием в отрасли мясо перерабатывающей промышленности на территории Республики Молдова, построенным по передовым технологиям с помощью зарубежных специалистов в данной отрасли. Производственные мощности составляют 80 тонн готовой продукции в сутки, а собственная логистическая сеть, состоящая более чем из 60 грузовых автомобилей оснащенных холодильными установками, позволяет ежедневно развозить продукцию по всей территории Республики Молдова.',
         moments: {
           current: {
             title: "МЫ СПЕЦИАЛИСТЫ ПО МЯСУ",
@@ -460,7 +470,8 @@ const resources = {
           },
           "1991": {
             title: "НЕЗАВИСИМОСТЬ",
-            description: "Начало деятельности компании в постсоветский период.",
+            description:
+              "После развала СССР, появляется АО «Кармез», производящее мясную продукцию до 2013 года.",
           },
           "1988": {
             title: "ТРАНСФОРМАЦИЯ",
@@ -468,9 +479,9 @@ const resources = {
               "Период важных преобразований в организации производства.",
           },
           "1970-1985": {
-            title: "УСТОЙЧИВЫЙ РОСТ",
+            title: "СОВЕРШЕНСТВОВАНИЕ И МОДЕРНИЗАЦИЯ",
             description:
-              "Период устойчивого роста и развития производственных мощностей.",
+              "Последующие тридцать лет, предприятие продолжает совершенствование производственных мощностей, модернизацию действующих цехов, улучшение кадровой политики предприятия.",
           },
           "1964": {
             title: "РАЗВИТИЕ",
@@ -485,12 +496,12 @@ const resources = {
           "1947": {
             title: "ВОССТАНОВЛЕНИЕ",
             description:
-              "Период восстановления после войны и возобновления деятельности.",
+              "Строительство современного завода начинается в 1947 году. К началу нового десятилетия, были построены два новых холодильника, площадью 1000 и 2000м2. В это же время, был утвержден план строительства нового колбасного цеха.",
           },
           "1941-1944": {
-            title: "ВОССТАНОВЛЕНИЕ",
+            title: "ПЕРИОД ВОЙНЫ",
             description:
-              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+              "Трудный период Второй мировой войны, который повлиял на деятельность предприятия.",
           },
           "1908": {
             title: "НАЧАЛО",
@@ -499,7 +510,18 @@ const resources = {
           },
           "1904": {
             title: "ОСНОВАНИЕ",
-            description: "Основание компании и начало традиции более века.",
+            description:
+              "В юго-западной части Кишинёва, городские власти разрешают строительство первой частной бойни, площадью всего 2576 м2. На протяжении трёх десятилетий, предприятие функционировало и развивалось уверенными шагами, расширялись производственные мощности, была построена собственная водонапорная башня, пробурены водяные скважины.",
+          },
+          "2019": {
+            title: "МОДЕРНИЗАЦИЯ И РАСШИРЕНИЕ",
+            description:
+              "Сдаётся в эксплуатацию абсолютно новое производство и логистический центр, общей площадью в 10000м2, соответствующие утвержденным санитарным нормам и европейским стандартам качества и безопасности пищевых продуктов, что подтверждает сертификация предприятия стандартам ISO 22000:2018.",
+          },
+          "2013": {
+            title: "СТРУКТУРНАЯ РЕОРГАНИЗАЦИЯ",
+            description:
+              'В следствие слияния с компанией "Carmez International", происходит полная структурная реорганизация, пересматривается ассортимент выпускаемой продукции, усовершенствуются процессы производства и упаковки готового продукта.',
           },
         },
       },
