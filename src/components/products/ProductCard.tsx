@@ -11,7 +11,6 @@ const ProductCard = ({
   category,
   categoryRu,
   isNew,
-  id,
 }: CardProps) => {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
@@ -30,7 +29,11 @@ const ProductCard = ({
         </span>
       )}
       <div className="aspect-square mb-3 md:mb-4 flex items-center justify-center">
-        <img src={image} alt={currentTitle} className="w-full h-full object-contain" />
+        <img
+          src={image}
+          alt={currentTitle}
+          className="w-full h-full object-contain"
+        />
       </div>
       <div className="space-y-1 md:space-y-2">
         <p className="text-gray-500 text-xs md:text-sm font-normal">
