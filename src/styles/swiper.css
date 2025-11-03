@@ -37,3 +37,31 @@
   display: block;
   overflow: visible !important;
 }
+
+/* Hero swiper full-width slides */
+.hero-swiper .swiper-slide {
+  width: 100% !important;
+}
+
+/* Hero pagination bullets */
+.hero-pagination-bullet {
+  width: 1.5rem;
+  height: 0.125rem;
+  background-color: white;
+  opacity: 0.2;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+@media (min-width: 768px) {
+  .hero-pagination-bullet {
+    width: 2.25rem;
+    height: 0.25rem;
+  }
+}
+
+.hero-pagination-bullet-active {
+  background-color: var(--color-primary);
+  opacity: 1;
+}
