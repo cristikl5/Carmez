@@ -1,4 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -54,10 +55,43 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
     }
   };
 
-  // Watch all form values for real-time updates
-  const watchedValues = watch();
+  // Watch individual form values for real-time updates
+  const meatType = watch("meatType");
+  const productCategory = watch("productCategory");
+  const expirationDate = watch("expirationDate");
+  const newProduct = watch("newProduct");
+  const prevValuesRef = useRef<string>("");
+  const isInitialMount = useRef(true);
 
-  // Handle form submission (apply filters)
+  // Trigger filter updates in real-time when values change
+  useEffect(() => {
+    // Skip initial mount to avoid triggering on component mount
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    const currentValues = JSON.stringify({
+      meatType,
+      productCategory,
+      expirationDate,
+      newProduct,
+    });
+
+    // Only trigger if values actually changed (not just a new object reference)
+    if (currentValues !== prevValuesRef.current && onFiltersChange) {
+      prevValuesRef.current = currentValues;
+      onFiltersChange({
+        meatType,
+        productCategory,
+        expirationDate,
+        newProduct,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meatType, productCategory, expirationDate, newProduct]);
+
+  // Handle form submission (apply filters) - kept for compatibility
   const onSubmit = (data: FiltersFormData) => {
     if (onFiltersChange) {
       onFiltersChange(data);
@@ -107,17 +141,46 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
               render={({ field }) => (
                 <Select onValueChange={field.onChange} value={field.value}>
                   <SelectTrigger className="w-full lg:min-w-[232px] border-gray-400 h-12 sm:h-10">
-                    <SelectValue placeholder={t("filters.carnat")} />
+                    <SelectValue placeholder={t("filters.productCategory")} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="carnat">
-                      {t("filters.carnat")}
+                    <SelectItem value="crenvursti-safalade">
+                      {t("filters.crenvurstiSafalade")}
                     </SelectItem>
-                    <SelectItem value="ciorba">
-                      {t("filters.ciorba")}
+                    <SelectItem value="fiert">{t("filters.fiert")}</SelectItem>
+                    <SelectItem value="sunci">{t("filters.sunci")}</SelectItem>
+                    <SelectItem value="semi-afumat">
+                      {t("filters.semiAfumat")}
+                    </SelectItem>
+                    <SelectItem value="fiert-afumat">
+                      {t("filters.fiertAfumat")}
+                    </SelectItem>
+                    <SelectItem value="crud-afumat">
+                      {t("filters.crudAfumat")}
+                    </SelectItem>
+                    <SelectItem value="delicatese">
+                      {t("filters.delicatese")}
+                    </SelectItem>
+                    <SelectItem value="alte-produse">
+                      {t("filters.alteProduse")}
                     </SelectItem>
                     <SelectItem value="conserve">
                       {t("filters.conserve")}
+                    </SelectItem>
+                    <SelectItem value="produse-vegetale">
+                      {t("filters.produseVegetale")}
+                    </SelectItem>
+                    <SelectItem value="carne-fresh">
+                      {t("filters.carneFresh")}
+                    </SelectItem>
+                    <SelectItem value="marinade">
+                      {t("filters.marinade")}
+                    </SelectItem>
+                    <SelectItem value="cirnaciori-mici">
+                      {t("filters.cirnacioriMici")}
+                    </SelectItem>
+                    <SelectItem value="snackz-stickz">
+                      {t("filters.snackzStickz")}
                     </SelectItem>
                   </SelectContent>
                 </Select>
@@ -146,7 +209,7 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
             <div className="mt-3 flex items-center justify-between text-xs sm:text-sm">
               <span>2 {t("filters.months")}</span>
               <span className="font-semibold">
-                {formatValue(watchedValues.expirationDate || 0)}
+                {formatValue(expirationDate || 0)}
               </span>
               <span>5 {t("filters.years")}</span>
             </div>

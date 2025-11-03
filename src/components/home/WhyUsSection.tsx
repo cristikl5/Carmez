@@ -15,7 +15,7 @@ const WhyUsSection = () => {
   const motives: Motive[] = [
     {
       unitMeasure: "TONE",
-      value: "65",
+      value: "80",
       description: t("home.whyUs.stats.capacity"),
     },
     {

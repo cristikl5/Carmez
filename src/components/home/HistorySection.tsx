@@ -14,17 +14,17 @@ const HistorySection = () => {
           <img
             src="/images/history/la-gust.svg"
             alt="Gust"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-4xl"
           />
           <img
-            src="/images/history/old-photo.png"
+            src="/images/history/old-photo.jpg"
             alt="Gust"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-4xl"
           />
           <img
-            src="/images/history/old-photo-2.png"
+            src="/images/history/old-photo-2.jpg"
             alt="Gust"
-            className="w-full h-full object-contain col-span-2"
+            className="w-full h-full object-contain col-span-2 rounded-4xl"
           />
         </div>
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-11 order-1 lg:order-2">
