@@ -3,59 +3,12 @@ import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { products } from "../../data/products";
 import ProductCard from "../products/ProductCard";
 import Breadcrumbs from "../ui/Breadcrumbs";
 import Button from "../ui/Button";
 import Ingredients from "./Ingredients";
 import PreparationMethod from "./PreparationMethod";
-
-const products = [
-  {
-    image: "/images/products/carnat-1.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-  },
-  {
-    image: "/images/products/carnat-2.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-    isNew: true,
-  },
-  {
-    image: "/images/products/carnat-3.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-    isNew: true,
-  },
-  {
-    image: "/images/products/carnat-4.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-    isNew: true,
-  },
-  {
-    image: "/images/products/carnat-5.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-  },
-  {
-    image: "/images/products/carnat-6.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-    isNew: true,
-  },
-  {
-    image: "/images/products/carnat-7.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-  },
-  {
-    image: "/images/products/carnat-8.png",
-    title: "Chobani Complete V",
-    category: "Diet Foods",
-    isNew: true,
-  },
-];
 
 const RecipeDetails = () => {
   const { name } = useParams();
@@ -142,12 +95,12 @@ const RecipeDetails = () => {
                 },
               }}
             >
-              {products.map(product => (
+              {products.slice(0, 8).map(product => (
                 <SwiperSlide
-                  key={product.image}
+                  key={product.id}
                   className="overflow-visible w-full"
                 >
-                  <ProductCard {...product} key={product.title} />
+                  <ProductCard {...product} />
                 </SwiperSlide>
               ))}
             </Swiper>

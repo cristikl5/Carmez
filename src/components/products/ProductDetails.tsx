@@ -1,4 +1,6 @@
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import { products } from "../../data/products";
 import Breadcrumbs from "../ui/Breadcrumbs";
 import ProductMetric from "./ProductMetric";
 import SuggestedProducts from "./SuggestedProducts";
@@ -8,27 +10,53 @@ export type Metric = {
   image: string;
 };
 
-const metrics: Metric[] = [
-  {
-    value: "450 Gr",
-    image: "/icons/scale.svg",
-  },
-  {
-    value: "48 Zile",
-    image: "/icons/timer.svg",
-  },
-  {
-    value: "De la 0°C la +6°C",
-    image: "/icons/thermometer.svg",
-  },
-  {
-    value: "Vid",
-    image: "/images/products/candy.png",
-  },
-];
-
 const ProductDetails = () => {
   const { title } = useParams();
+  const { i18n } = useTranslation();
+  const decodedTitle = title ? decodeURIComponent(title) : "";
+  const product = products.find(
+    p => p.title === decodedTitle || p.titleRu === decodedTitle
+  );
+
+  if (!product) {
+    return (
+      <section className="py-24 sm:py-36">
+        <div className="fluid-container">
+          <Breadcrumbs hideTitle />
+          <div className="text-center py-10">
+            <p className="text-gray-500 text-lg">Produsul nu a fost găsit</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const currentTitle = i18n.language === "ru" ? product.titleRu : product.title;
+  const currentCategory =
+    i18n.language === "ru" ? product.categoryRu : product.category;
+  const currentIngredients =
+    i18n.language === "ru" ? product.ingredientsRu : product.ingredients;
+  const currentPackaging =
+    i18n.language === "ru" ? product.packagingRu : product.packaging;
+
+  const metrics: Metric[] = [
+    {
+      value: product.weight,
+      image: "/icons/scale.svg",
+    },
+    {
+      value: product.expiration,
+      image: "/icons/timer.svg",
+    },
+    {
+      value: product.storageTemp,
+      image: "/icons/thermometer.svg",
+    },
+    {
+      value: currentPackaging,
+      image: "/images/products/candy.png",
+    },
+  ];
 
   return (
     <section className="py-24 sm:py-36">
@@ -37,22 +65,22 @@ const ProductDetails = () => {
         <div className="mt-10 grid sm:grid-cols-2 gap-9">
           <div className="space-y-5">
             <img
-              src="/images/products/carnat-details.png"
-              alt=""
+              src={product.image}
+              alt={currentTitle}
               className="object-contain rounded-[18px]"
             />
           </div>
           <div className="space-y-5">
             <div className="space-y-4">
               <h1 className="font-semibold font-barlow text-4xl !mt-0">
-                {title}
+                {currentTitle}
               </h1>
-              <span className="text-gray-400">Diet Foods</span>
+              <span className="text-gray-400">{currentCategory}</span>
             </div>
             <div className="flex flex-wrap gap-4">
               {metrics.map(metric => (
                 <ProductMetric
-                  key={metric.value}
+                  key={`${metric.value}-${metric.image}`}
                   value={metric.value}
                   image={metric.image}
                 />
@@ -84,14 +112,14 @@ const ProductDetails = () => {
                 Condimente naturale
               </a>
             </div>
-            <p className="mt-5 font-normal leading-6 text-gray-600">
-              Istoria acestei cervelate a început în perioada sovietică, când
-              produse speciale erau produse în cantități limitate, special
-              pentru rațiile Kremlinului. Mai târziu, gustul clasic bogat de
-              carne și aspectul memorabil al cervelatei au fost apreciate și
-              îndrăgite de clienții obișnuiți. Calitatea acestei cervelate a
-              fost testată de timp.
-            </p>
+            <div className="mt-5 space-y-3">
+              <h3 className="font-bold text-lg text-gray-800">
+                {i18n.language === "ru" ? "Ингредиенты:" : "Ingrediente:"}
+              </h3>
+              <p className="font-normal leading-6 text-gray-600">
+                {currentIngredients}
+              </p>
+            </div>
           </div>
         </div>
         <div className="mt-32">

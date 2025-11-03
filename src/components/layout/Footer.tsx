@@ -47,19 +47,19 @@ const Footer = () => {
       urls: [
         {
           title: t("footer.aboutUs"),
-          href: "/",
+          href: "/despre-noi",
         },
         {
-          title: t("footer.affiliate"),
-          href: "/",
+          title: t("footer.news"),
+          href: "/news",
         },
         {
-          title: t("footer.career"),
-          href: "/",
+          title: t("footer.recipes"),
+          href: "/retete",
         },
         {
           title: t("footer.contactUs"),
-          href: "/",
+          href: "/contacte",
         },
       ],
     },
@@ -67,42 +67,50 @@ const Footer = () => {
       title: "categories",
       urls: [
         {
-          title: t("footer.milksDairies"),
-          href: "/",
+          title: t("footer.crenvurstiSafalade"),
+          href: "/catalog",
         },
         {
-          title: t("footer.clothingBeauty"),
-          href: "/",
+          title: t("footer.fierte"),
+          href: "/catalog",
         },
         {
-          title: t("footer.petToy"),
-          href: "/",
+          title: t("footer.semiAfumate"),
+          href: "/catalog",
         },
         {
-          title: t("footer.bakingMaterial"),
-          href: "/",
+          title: t("footer.fiertAfumate"),
+          href: "/catalog",
         },
         {
-          title: t("footer.freshFruit"),
-          href: "/",
+          title: t("footer.crudAfumate"),
+          href: "/catalog",
         },
         {
-          title: t("footer.winesDrinks"),
-          href: "/",
+          title: t("footer.delicatese"),
+          href: "/catalog",
+        },
+        {
+          title: t("footer.alteProduse"),
+          href: "/catalog",
+        },
+        {
+          title: t("footer.conserve"),
+          href: "/catalog",
+        },
+        {
+          title: t("footer.carneFreshMarinade"),
+          href: "/catalog",
+        },
+        {
+          title: t("footer.cirnacioriMici"),
+          href: "/catalog",
         },
       ],
     },
     {
       title: "information",
       urls: [
-        {
-          title: t("footer.contactUs"),
-          href: "/",
-        },
-        {
-          title: t("footer.aboutUs"),
-          href: "/",
-        },
         {
           title: t("footer.cookiePolicy"),
           href: "/",

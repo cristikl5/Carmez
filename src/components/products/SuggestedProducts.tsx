@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { products } from "../home/ProductsSection";
+import { products } from "../../data/products";
 import Button from "../ui/Button";
 import ProductCard from "./ProductCard";
 
@@ -65,12 +65,12 @@ const SuggestedProducts = () => {
             },
           }}
         >
-          {products.map(product => (
+          {products.slice(0, 8).map(product => (
             <SwiperSlide
-              key={product.image}
+              key={product.id}
               className="overflow-visible w-full"
             >
-              <ProductCard {...product} key={product.title} />
+              <ProductCard {...product} />
             </SwiperSlide>
           ))}
         </Swiper>
