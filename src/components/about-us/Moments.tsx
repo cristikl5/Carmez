@@ -152,7 +152,7 @@ const Moments = () => {
       </h2>
       <div className="mt-11 grid sm:grid-cols-2 gap-20 h-[600px]">
         <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between h-full">
-          <ul className="flex flex-col items-baseline justify-between h-full text-sm font-bold list-disc text-gray-500">
+          <ul className="flex sm:flex-col items-baseline justify-between h-full text-sm font-bold sm:list-disc text-gray-500 flex-row flex-wrap gap-3">
             {yearsList.map(year => (
               <li
                 key={year}

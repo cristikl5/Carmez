@@ -1,7 +1,7 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "../ui/Button";
 
 const HeroSection = () => {
@@ -29,10 +29,22 @@ const HeroSection = () => {
     <Swiper
       onSwiper={swiper => (swiperRef.current = swiper)}
       modules={[Autoplay, Pagination]}
-      loop={true}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
+      slidesPerView={1}
+      spaceBetween={0}
+      breakpoints={{
+        0: {
+          allowTouchMove: false,
+          loop: false,
+          autoplay: false,
+        },
+        768: {
+          allowTouchMove: true,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+        },
       }}
       pagination={{
         clickable: true,
@@ -43,7 +55,7 @@ const HeroSection = () => {
       className="hero-swiper min-h-screen w-full"
     >
       {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className={index > 0 ? "hidden md:block" : ""}>
           <a
             href="https://linella.md/ro/carmez"
             target="_blank"
@@ -54,7 +66,10 @@ const HeroSection = () => {
             }}
             onClick={e => {
               const target = e.target as HTMLElement;
-              if (target.closest(".hero-pagination") || target.closest(".hero-nav-button")) {
+              if (
+                target.closest(".hero-pagination") ||
+                target.closest(".hero-nav-button")
+              ) {
                 e.preventDefault();
               }
             }}
@@ -62,13 +77,13 @@ const HeroSection = () => {
           />
         </SwiperSlide>
       ))}
-      <div className="hero-pagination flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
-      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button">
+      <div className="hero-pagination hidden md:flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
+      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button hidden md:block">
         <Button variant="icon" onClick={handlePrev}>
           <ChevronLeft size={24} />
         </Button>
       </div>
-      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button">
+      <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button hidden md:block">
         <Button variant="icon" onClick={handleNext}>
           <ChevronRight size={24} />
         </Button>

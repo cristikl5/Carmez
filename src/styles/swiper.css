@@ -7,7 +7,7 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  overflow: visible !important;
+  overflow: hidden;
   list-style: none;
   padding: 0;
   z-index: 1;
@@ -24,18 +24,16 @@
   transition-property: transform;
   transition-timing-function: ease;
   box-sizing: content-box;
-  overflow: visible !important;
 }
 
 /* Individual slides */
 .swiper-slide {
   flex-shrink: 0;
-  width: fit-content !important;
+  width: 100%;
   height: 100%;
   position: relative;
   transition-property: transform;
   display: block;
-  overflow: visible !important;
 }
 
 /* Hero swiper full-width slides */
@@ -64,4 +62,15 @@
 .hero-pagination-bullet-active {
   background-color: var(--color-primary);
   opacity: 1;
+}
+
+/* Hero slide background - zoomed out on mobile */
+.hero-slide-bg-mobile {
+  background-size: 120%;
+}
+
+@media (min-width: 768px) {
+  .hero-slide-bg-mobile {
+    background-size: cover;
+  }
 }

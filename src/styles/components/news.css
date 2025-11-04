@@ -15,11 +15,11 @@
 }
 
 /* Ensure Swiper slides don't overflow on mobile */
-.swiper-slide {
+.news-section .swiper-slide {
   width: auto !important;
 }
 
-.swiper-slide > div {
+.news-section .swiper-slide > div {
   width: 100%;
   max-width: 520px;
 }
@@ -45,12 +45,12 @@
   }
 
   /* Mobile cards: Ensure they fit within viewport */
-  .swiper-slide {
+  .news-section .swiper-slide {
     width: calc(100vw - 32px) !important;
     max-width: calc(100vw - 32px) !important;
   }
 
-  .swiper-slide > div {
+  .news-section .swiper-slide > div {
     width: 100%;
     max-width: 100%;
   }
