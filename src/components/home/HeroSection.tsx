@@ -38,7 +38,8 @@ const HeroSection = () => {
       }}
       breakpoints={{
         0: {
-          allowTouchMove: true,
+          autoplay: false,
+          allowTouchMove: false,
         },
         768: {
           allowTouchMove: true,
@@ -75,7 +76,7 @@ const HeroSection = () => {
           />
         </SwiperSlide>
       ))}
-      <div className="hero-pagination flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
+      <div className="hero-pagination hidden md:flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
       <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button hidden md:block">
         <Button
           size="lg"
