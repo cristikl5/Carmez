@@ -1,4 +1,4 @@
-import { Menu, ShoppingCart, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
@@ -64,20 +64,9 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile: Menu button and Cart */}
+          {/* Mobile: Menu button */}
           <div className="flex items-center gap-3 lg:hidden">
             <LanguageSwitcher />
-            <div className="relative">
-              <a
-                href="/"
-                className="text-white hover:text-gray-200 transition-colors"
-              >
-                <ShoppingCart size={18} color="white" />
-                <span className="absolute -top-2 -right-2 bg-white text-primary text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
-                  0
-                </span>
-              </a>
-            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white p-1 hover:scale-110 transition-transform duration-200"
@@ -170,20 +159,9 @@ const Header = () => {
             </div>
           </div>
         </nav>
-        {/* Right side - Language switcher and Cart */}
+        {/* Right side - Language switcher */}
         <div className="items-center gap-4 hidden lg:flex">
           <LanguageSwitcher />
-          <div className="relative">
-            <a
-              href="#"
-              className="text-white hover:text-gray-200 transition-colors"
-            >
-              <ShoppingCart size={20} color="white" />
-              <span className="absolute -top-2 -right-2 bg-white text-primary text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
-                0
-              </span>
-            </a>
-          </div>
         </div>
       </div>
 

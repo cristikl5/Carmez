@@ -9,12 +9,12 @@ const HistorySection = () => {
 
   return (
     <div className="bg-layout pt-10 md:pt-16 lg:pt-20">
-      <div className="grid lg:grid-cols-2 gap-8 md:gap-11 items-center fluid-container">
+      <div className="grid lg:grid-cols-2 gap-8 md:gap-11 items-start fluid-container">
         <div className="grid grid-cols-2 gap-4 md:gap-8 lg:gap-12 order-2 lg:order-1">
           <img
             src="/images/history/la-gust.svg"
             alt="Gust"
-            className="w-full h-full object-contain rounded-4xl"
+            className="w-3/4 md:w-full h-full object-contain rounded-4xl"
           />
           <img
             src="/images/history/old-photo.jpg"
@@ -28,9 +28,6 @@ const HistorySection = () => {
           />
         </div>
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-11 order-1 lg:order-2">
-          <span className="text-primary font-bold text-sm md:text-base">
-            {t("home.history.title")}
-          </span>
           <div className="space-y-3 md:space-y-4">
             <h2 className="font-barlow font-medium text-2xl md:text-3xl lg:text-[40px] leading-tight lg:leading-10">
               {t("home.history.subtitle")}

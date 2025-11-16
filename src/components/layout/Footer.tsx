@@ -108,31 +108,6 @@ const Footer = () => {
         },
       ],
     },
-    {
-      title: "information",
-      urls: [
-        {
-          title: t("footer.cookiePolicy"),
-          href: "/",
-        },
-        {
-          title: t("footer.termsConditions"),
-          href: "/",
-        },
-        {
-          title: t("footer.returnsExchanges"),
-          href: "/",
-        },
-        {
-          title: t("footer.shippingDelivery"),
-          href: "/",
-        },
-        {
-          title: t("footer.privacyPolicy"),
-          href: "/",
-        },
-      ],
-    },
   ];
 
   return (
@@ -147,7 +122,7 @@ const Footer = () => {
               alt="Logo"
               className="object-contain h-12 md:h-auto"
             />
-            <p className="font-ibarra text-sm md:text-base font-normal text-primary max-w-[280px] md:max-w-[200px]">
+            <p className="font-ibarra text-sm md:text-base font-normal text-primary max-w-[100px] md:max-w-[100px]">
               {t("footer.description")}
             </p>
             <div className="space-y-2.5">
@@ -171,7 +146,7 @@ const Footer = () => {
 
           {/* Links Section */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {links.map(link => (
                 <div key={link.title} className="space-y-4 lg:space-y-5">
                   <h3 className="font-bold text-base md:text-lg">

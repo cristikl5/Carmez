@@ -31,19 +31,17 @@ const HeroSection = () => {
       modules={[Autoplay, Pagination]}
       slidesPerView={1}
       spaceBetween={0}
+      loop={true}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
       breakpoints={{
         0: {
-          allowTouchMove: false,
-          loop: false,
-          autoplay: false,
+          allowTouchMove: true,
         },
         768: {
           allowTouchMove: true,
-          loop: true,
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-          },
         },
       }}
       pagination={{
@@ -55,7 +53,7 @@ const HeroSection = () => {
       className="hero-swiper min-h-screen w-full"
     >
       {slides.map((slide, index) => (
-        <SwiperSlide key={index} className={index > 0 ? "hidden md:block" : ""}>
+        <SwiperSlide key={index}>
           <a
             href="https://linella.md/ro/carmez"
             target="_blank"
@@ -77,15 +75,25 @@ const HeroSection = () => {
           />
         </SwiperSlide>
       ))}
-      <div className="hero-pagination hidden md:flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
+      <div className="hero-pagination flex items-center justify-center gap-2 md:gap-3 absolute bottom-3 md:bottom-5 left-0 right-0 z-10"></div>
       <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button hidden md:block">
-        <Button variant="icon" onClick={handlePrev}>
-          <ChevronLeft size={24} />
+        <Button
+          size="lg"
+          variant="icon"
+          onClick={handlePrev}
+          className="!p-3 md:!p-4"
+        >
+          <ChevronLeft size={36} />
         </Button>
       </div>
       <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hero-nav-button hidden md:block">
-        <Button variant="icon" onClick={handleNext}>
-          <ChevronRight size={24} />
+        <Button
+          size="lg"
+          variant="icon"
+          onClick={handleNext}
+          className="!p-3 md:!p-4"
+        >
+          <ChevronRight size={36} />
         </Button>
       </div>
     </Swiper>

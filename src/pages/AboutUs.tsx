@@ -7,7 +7,10 @@ const AboutUs = () => {
   return (
     <section className="py-20">
       <div className="fluid-container">
-        <p className="text-center font-medium whitespace-pre-line">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-dark font-barlow text-center leading-10 mb-6">
+          {t("footer.aboutUs")}
+        </h2>
+        <p className="text-justify font-medium text-base md:text-lg whitespace-pre-line">
           {t("aboutUs.description")}
         </p>
         <Moments />

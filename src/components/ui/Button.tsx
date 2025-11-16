@@ -21,7 +21,7 @@ const Button = ({
       case "outline":
         return "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white";
       case "icon":
-        return "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white border-0 !p-1";
+        return "bg-primary text-white border border-primary hover:bg-primary/90 hover:text-white border-0 !p-1";
       case "ghost":
         return "bg-transparent text-primary hover:bg-primary hover:text-white";
       default:

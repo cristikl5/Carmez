@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import Button from "../ui/Button";
 
 export type Motive = {
   unitMeasure: string;
@@ -9,22 +7,21 @@ export type Motive = {
 };
 
 const WhyUsSection = () => {
-  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const motives: Motive[] = [
     {
-      unitMeasure: "TONE",
+      unitMeasure: t("home.whyUs.unitMeasures.tone"),
       value: "80",
       description: t("home.whyUs.stats.capacity"),
     },
     {
-      unitMeasure: "m2",
+      unitMeasure: t("home.whyUs.unitMeasures.m2"),
       value: "12000",
       description: t("home.whyUs.stats.area"),
     },
     {
-      unitMeasure: "angajati",
+      unitMeasure: t("home.whyUs.unitMeasures.angajati"),
       value: "650",
       description: t("home.whyUs.stats.employees"),
     },
@@ -60,11 +57,6 @@ const WhyUsSection = () => {
                   </p>
                 </div>
               ))}
-            </div>
-            <div className="flex items-center justify-center">
-              <Button onClick={() => navigate("/catalog")}>
-                {t("home.whyUs.button")}
-              </Button>
             </div>
           </div>
         </div>

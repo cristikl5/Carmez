@@ -31,7 +31,7 @@ const Faq = () => {
     <section className="py-20">
       <div className="flex items-center justify-center">
         <div className="space-y-2 text-center">
-          <span className="text-primary font-semibold text-lg">
+          <span className="text-primary font-semibold text-2xl">
             {t("faq.title")}
           </span>
           <h3 className="font-bold text-[40px] leading-12">

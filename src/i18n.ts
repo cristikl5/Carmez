@@ -54,7 +54,7 @@ const resources = {
           viewAll: "Vezi toate",
           items: {
             title: "Retele clasice la masa de Pasti. Din 1904.",
-            buttonText: "Cumpara aici",
+            buttonText: "citește mai mult",
           },
         },
         whyUs: {
@@ -65,6 +65,11 @@ const resources = {
               "Capacitatea de producție este de 80 de tone produse finite pe zi",
             area: "Suprafața totală a producerii și depozitului frigorific de marfă",
             employees: "La moment în cadrul companiei lucrează 650 de angajați",
+          },
+          unitMeasures: {
+            tone: "TONE",
+            m2: "m2",
+            angajati: "angajati",
           },
         },
       },
@@ -85,29 +90,29 @@ const resources = {
             },
           },
           "2014": {
-            title: "EXTINDERE NAȚIONALĂ",
+            title: "110 ani - Jubileu",
             description:
-              "Extinderea rețelei de distribuție la nivel național și modernizarea facilităților de producție.",
+              'Marca comercială «Carmez» lansează o serie specială de produse cârnați în onoarea aniversării de 110 ani, care include produsele preferate de consumatori, cum ar fi: "Servelat de Jubileu", "De Moscova de Jubileu", "Parizer Doctorscaia de Jubileu", "Crenvurști de Jubileu".',
           },
           "2008": {
-            title: "MODERNIZARE",
+            title: "Marca anului",
             description:
-              "Implementarea tehnologiilor moderne de producție și certificarea conform standardelor europene.",
+              'Marca comercială «Carmez» a fost distinsă pentru a 4-a oară cu premiul "Marca anului".',
           },
           "2004": {
-            title: "DEZVOLTARE",
+            title: "Magazine specializate",
             description:
-              "Lansarea primelor produse premium și extinderea gamei de produse.",
+              "SA «Carmez» colaborează cu 1400 de magazine de retail și en-gros, precum și deține cea mai largă rețea de magazine proprii, formată din 25 de magazine specializate, situate în întreaga țară.",
           },
           "2000": {
-            title: "MILENIUL NOU",
+            title: "Premiul de stat",
             description:
-              "Intrarea în noul mileniu cu planuri ambițioase de dezvoltare.",
+              "Pentru prima dată în Republica Moldova, SA «Carmez» a fost distins cu Premiul de Stat pentru realizări în domeniul calității.",
           },
           "1999": {
-            title: "CONSOLIDARE",
+            title: "95 de ani - Jubileu",
             description:
-              "Consolidarea poziției pe piața locală și îmbunătățirea proceselor.",
+              "Carmez sărbătorește jubileul - 95 de ani de la fondare. În acest an, SA «Carmez» a fost recunoscut ca cel mai mare combinat de prelucrare a cărnii din Moldova.",
           },
           "1991": {
             title: "INDEPENDENȚA",
@@ -115,44 +120,53 @@ const resources = {
               'După destrămarea URSS, apare SA "Carmez", producând produse din carne până în anul 2013.',
           },
           "1988": {
-            title: "TRANSFORMARE",
+            title: "A 3-a reconstrucție",
             description:
-              "Perioada de transformări importante în organizarea producției.",
+              "A început a treia reconstrucție a combinatului: fabrica de prelucrare a cărnii și fabrica de prelucrare primară a animalelor, complexul de instalații de epurare, cazaneria mare.",
           },
           "1970-1985": {
-            title: "PERFECȚIONARE ȘI MODERNIZARE",
+            title: "Reechipare tehnică",
             description:
-              "Timp de trei decenii, întreprinderea a continuat să-și perfecționeze capacitățile de producere, să-și modernizeze secțiile existente și să-și îmbunătățească politica de personal a companiei.",
+              "Creșterea capacităților s-a realizat în principal prin reconstrucții și reechipare tehnică a producției fără creșterea suprafețelor de producție și dezvoltarea corespunzătoare a infrastructurii de inginerie.",
+          },
+          "1966": {
+            title: "Noi ateliere",
+            description:
+              "Au intrat în funcțiune atelierul de cârnați și atelierul de conserve, precum și un nou frigider.",
           },
           "1964": {
-            title: "DEZVOLTARE",
+            title: "Lucrători",
             description:
-              "Continuarea dezvoltării și îmbunătățirea tehnologiilor de producție.",
+              "În 1964, la combinatul de carne lucrau 1391 de persoane. Dintre acestea: Moldoveni - 569, Ruși - 328, Ucraineni – 156.",
           },
           "1955": {
-            title: "STABILIZARE",
+            title: "Suprafață",
             description:
-              "Stabilizarea activității și consolidarea echipei de lucru.",
+              "Suprafața de producție a atelierelor principale a fost adusă la 12460 m2.",
+          },
+          "1950": {
+            title: "Abator de păsări",
+            description:
+              "A început să funcționeze abatorul de păsări, s-a construit un frigider de 100 de tone pentru depozitarea simultană a cărnii, precum și o centrală termoelectrică cu o putere de 500 kW.",
           },
           "1947": {
-            title: "RECONSTRUIRE",
+            title: "Combinat",
             description:
-              "Construcția întreprinderii moderne începe în anul 1947. Până la începutul noului deceniu, au fost construite două frigidere noi, cu o suprafață de 1000 și 2000 m2. În același timp, a fost aprobat planul pentru construcția unei noi secții de producere a mezelurilor.",
+              "Poate fi considerat începutul construcției combinatului cu toate atelierele sale.",
           },
           "1941-1944": {
-            title: "PERIOADA DE RĂZBOI",
+            title: "Reconstrucție",
             description:
-              "Perioada dificilă a celui de-al Doilea Război Mondial, care a afectat activitățile întreprinderii.",
+              "Sfârșitul războiului, precum și primii ani de pace - ani de muncă istovitoare, reconstrucție și restabilire a întreprinderii.",
           },
           "1908": {
-            title: "ÎNCEPUTURI",
-            description:
-              "Primii pași în industria cărnii și stabilirea bazelor pentru viitor.",
+            title: "Turn",
+            description: "A fost construit turnul de apă.",
           },
           "1904": {
-            title: "FONDAREA",
+            title: "Începutul Istoriei",
             description:
-              "În partea de sud-vest a Chișinăului, autoritățile orașului au permis construcția primului abator privat, cu o suprafață de doar 2576 m2. Timp de trei decenii, întreprinderea a funcționat și s-a dezvoltat cu pași încrezători, au fost extinse capacitățile de producție și a fost construită propria fântână arteziană.",
+              "Istoria combinatului de carne din Chișinău a început în 1904, în partea de sud-vest a Chișinăului, la patru kilometri de stația de cale ferată din Chișinău, unde autoritățile orașului au permis construirea primului abator privat. Primele capete de animale au fost sacrificate în condiții noi sub supravegherea unui medic veterinar în octombrie 1904. Suprafața de producție a întreprinderii era de doar 2576 m2. Numărul de angajați la acel moment era de 70 de persoane.",
           },
           "2019": {
             title: "MODERNIZARE ȘI EXTINDERE",
@@ -186,7 +200,7 @@ const resources = {
         returnsExchanges: "Returnări și schimburi",
         shippingDelivery: "Livrare",
         privacyPolicy: "Politica de confidențialitate",
-        description: "Carmez - tradiție și gust autentic din 1904",
+        description: "Rețete clasice. Din 1904",
         followUs: "Urmărește-ne",
         // Categories
         crenvurstiSafalade: "Crenvurști/Safalade",
@@ -413,7 +427,7 @@ const resources = {
           viewAll: "Посмотреть все",
           items: {
             title: "Классические колбасы на пасхальном столе. С 1904 года.",
-            buttonText: "Купить здесь",
+            buttonText: "Читать далее",
           },
         },
         whyUs: {
@@ -424,6 +438,11 @@ const resources = {
               "Производственная мощность составляет 80 тонн готовой продукции в сутки",
             area: "Площадь производства и холодильных складов",
             employees: "Численность персонала составляет 650 специалистов",
+          },
+          unitMeasures: {
+            tone: "тонн",
+            m2: "м2",
+            angajati: "angajati",
           },
         },
       },
@@ -444,29 +463,29 @@ const resources = {
             },
           },
           "2014": {
-            title: "НАЦИОНАЛЬНОЕ РАСШИРЕНИЕ",
+            title: "110 лет - Юбилей",
             description:
-              "Расширение сети дистрибуции на национальном уровне и модернизация производственных мощностей.",
+              "Торговая марка «Carmez» выпускает специальную серию колбасных изделий в честь 110летнего юбилея, в которую вошли полюбившиеся потребителю продукты такие как: «Servelat de Jubileu», «De Moscova de Jubileu», «Parizer Doctorscaia de Jubileu», «Crenvurști de Jubileu».",
           },
           "2008": {
-            title: "МОДЕРНИЗАЦИЯ",
+            title: "Марка года",
             description:
-              "Внедрение современных производственных технологий и сертификация по европейским стандартам.",
+              "Торговая марка «Carmez» в 4 раз удостоена премии Марка года.",
           },
           "2004": {
-            title: "РАЗВИТИЕ",
+            title: "Спец. магазины",
             description:
-              "Запуск первых премиальных продуктов и расширение продуктовой линейки.",
+              "АО «Carmez» сотрудничает с 1400 магазинами розничной и оптовой торговли, а также обладает самой широкой сетью своих магазинов, состоящий из 25 специализированных магазинов, расположенных по всей стране.",
           },
           "2000": {
-            title: "НОВОЕ ТЫСЯЧЕЛЕТИЕ",
+            title: "Гос. премия",
             description:
-              "Вступление в новое тысячелетие с амбициозными планами развития.",
+              "Впервые в Республике Молдова АО «Carmez» удастоено Государственной премии за достижения в области качества.",
           },
           "1999": {
-            title: "КОНСОЛИДАЦИЯ",
+            title: "95 лет - Юбилей",
             description:
-              "Консолидация позиции на местном рынке и улучшение процессов.",
+              "Carmez празднует юбилей - 95 лет со дня основания. В этот год SA «Carmez» был отмечен как крупнейший в Молдове мясоперерабатывающий завод.",
           },
           "1991": {
             title: "НЕЗАВИСИМОСТЬ",
@@ -474,44 +493,53 @@ const resources = {
               "После развала СССР, появляется АО «Кармез», производящее мясную продукцию до 2013 года.",
           },
           "1988": {
-            title: "ТРАНСФОРМАЦИЯ",
+            title: "3-я реконструкция",
             description:
-              "Период важных преобразований в организации производства.",
+              "Началась третья реконструкция комбината: мясоперерабатывающего завода и завода первичной переработки скота, комплекса очистных сооружений, крупной котельной.",
           },
           "1970-1985": {
-            title: "СОВЕРШЕНСТВОВАНИЕ И МОДЕРНИЗАЦИЯ",
+            title: "Тех. перевооружения",
             description:
-              "Последующие тридцать лет, предприятие продолжает совершенствование производственных мощностей, модернизацию действующих цехов, улучшение кадровой политики предприятия.",
+              "Наращивание мощностей осуществлялось в основном за счет реконструкций и технического перевооружения производства без увеличения производственных площадей, и соответствующего развития инженерного обеспечения.",
+          },
+          "1966": {
+            title: "Новые цеха",
+            description:
+              "Вступили в строй колбасный и консервный цеха, и новый холодильник.",
           },
           "1964": {
-            title: "РАЗВИТИЕ",
+            title: "Работники",
             description:
-              "Продолжение развития и улучшение производственных технологий.",
+              "В 1964 Году на мясокомбинате работало 1391 чел. Из них: Молдаван - 569, Русских - 328, Украинцев – 156.",
           },
           "1955": {
-            title: "СТАБИЛИЗАЦИЯ",
+            title: "Площадь",
             description:
-              "Стабилизация деятельности и консолидация рабочей команды.",
+              "Производственная площадь основных цехов была доведена до 12460 м2.",
+          },
+          "1950": {
+            title: "Птицебойня",
+            description:
+              "Начала действовать птицебойня, построили холодильник на 100 тонн единовременного хранения мяса, а также ТЭЦ мощностью 500 кВт.",
           },
           "1947": {
-            title: "ВОССТАНОВЛЕНИЕ",
+            title: "Комбинат",
             description:
-              "Строительство современного завода начинается в 1947 году. К началу нового десятилетия, были построены два новых холодильника, площадью 1000 и 2000м2. В это же время, был утвержден план строительства нового колбасного цеха.",
+              "Можно считать началом строительства комбината со всеми его цехами.",
           },
           "1941-1944": {
-            title: "ПЕРИОД ВОЙНЫ",
+            title: "Реконструкция",
             description:
-              "Трудный период Второй мировой войны, который повлиял на деятельность предприятия.",
+              "Окончание войны,а также первые мирные годы - годы изнурительного труда, реконструкция и восстановление предприятия.",
           },
           "1908": {
-            title: "НАЧАЛО",
-            description:
-              "Первые шаги в мясной промышленности и закладка основ для будущего.",
+            title: "Башня",
+            description: "Построена водонапорная башня.",
           },
           "1904": {
-            title: "ОСНОВАНИЕ",
+            title: "Начало Истории",
             description:
-              "В юго-западной части Кишинёва, городские власти разрешают строительство первой частной бойни, площадью всего 2576 м2. На протяжении трёх десятилетий, предприятие функционировало и развивалось уверенными шагами, расширялись производственные мощности, была построена собственная водонапорная башня, пробурены водяные скважины.",
+              "История Кишиневского мясокомбината началась с 1904 года в юго-западной части Кишинева в четырех километрах от железнодорожной станции Кишинева, где городские власти разрешили построить первую частную бойню. Первые головы скота были забиты в новых условиях под надзором ветеринарного врача в октябре 1904 года. Производственная площадь предприятия равнялась всего лишь 2576 м2. Численность сотрудников на тот момент состовляло 70 чел.",
           },
           "2019": {
             title: "МОДЕРНИЗАЦИЯ И РАСШИРЕНИЕ",
@@ -696,7 +724,7 @@ const resources = {
         returnsExchanges: "Возврат и обмен",
         shippingDelivery: "Доставка",
         privacyPolicy: "Политика конфиденциальности",
-        description: "Кармез - традиция и аутентичный вкус с 1904 года",
+        description: "Классические рецепты. С 1904.",
         followUs: "Подписывайтесь на нас",
         // Categories
         crenvurstiSafalade: "Сосиски/Сардельки",
@@ -710,10 +738,10 @@ const resources = {
         carneFreshMarinade: "Свежее мясо/маринады",
         cirnacioriMici: "Колбаски/мититеи",
         infoItems: {
-          address: "Р.Молдова, г.Кишинёв, ул.Calea Basarabiei 36/4",
+          address: "R.Moldova, or.Chișinău, Str.Calea Basarabiei 36/4",
           phone: "(+373) 22 788 251",
           email: "receptio@carmez.md",
-          workingHours: "08:00 - 18:00, Понедельник - Суббота",
+          workingHours: "9:00 – 17:30 Lu – Vi (9:00 – 17:30 Пн – Пт)",
         },
         phoneNumbers: {
           primary: "(+373) 22 788 251",

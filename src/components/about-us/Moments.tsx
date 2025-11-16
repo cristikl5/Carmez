@@ -86,6 +86,12 @@ const Moments = () => {
       description: t("aboutUs.moments.1970-1985.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
+    "1966": {
+      years: ["1966"],
+      title: t("aboutUs.moments.1966.title"),
+      description: t("aboutUs.moments.1966.description"),
+      image: "/images/about-us/reconsctruction.jpg",
+    },
     "1964": {
       years: ["1964"],
       title: t("aboutUs.moments.1964.title"),
@@ -96,6 +102,12 @@ const Moments = () => {
       years: ["1955"],
       title: t("aboutUs.moments.1955.title"),
       description: t("aboutUs.moments.1955.description"),
+      image: "/images/about-us/reconsctruction.jpg",
+    },
+    "1950": {
+      years: ["1950"],
+      title: t("aboutUs.moments.1950.title"),
+      description: t("aboutUs.moments.1950.description"),
       image: "/images/about-us/reconsctruction.jpg",
     },
     "1947": {
@@ -136,8 +148,10 @@ const Moments = () => {
     "1991",
     "1988",
     "1970-1985",
+    "1966",
     "1964",
     "1955",
+    "1950",
     "1947",
     "1941-1944",
     "1908",
