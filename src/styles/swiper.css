@@ -43,8 +43,8 @@
 
 /* Hero pagination bullets */
 .hero-pagination-bullet {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-color: white;
   opacity: 0.2;
   border-radius: 9999px;
@@ -54,8 +54,8 @@
 
 @media (min-width: 768px) {
   .hero-pagination-bullet {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 }
 
