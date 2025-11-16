@@ -74,3 +74,14 @@
     background-size: cover;
   }
 }
+
+/* Responsive hero slide 1 images */
+.hero-slide-1 {
+  background-image: url('/images/hero-1-mobile.png') !important;
+}
+
+@media (min-width: 768px) {
+  .hero-slide-1 {
+    background-image: url('/images/hero-1.jpg') !important;
+  }
+}

@@ -59,7 +59,7 @@ const HeroSection = () => {
             href="https://linella.md/ro/carmez"
             target="_blank"
             rel="noopener noreferrer"
-            className="block min-h-screen w-full bg-cover bg-center bg-no-repeat relative cursor-pointer"
+            className={`block min-h-screen w-full bg-cover bg-center bg-no-repeat relative cursor-pointer ${index === 0 ? "hero-slide-1" : ""}`}
             style={{
               backgroundImage: `url('${slide}')`,
             }}
