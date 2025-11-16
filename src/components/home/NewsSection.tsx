@@ -1,3 +1,4 @@
+import { newsData } from "@/data/newsData";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -10,35 +11,18 @@ import HomeNewsCard from "./HomeNewsCard";
 const NewsSection = () => {
   const swiperRef = useRef<any>(null);
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const news = [
-    {
-      title: t("home.news.items.title"),
-      buttonText: t("home.news.items.buttonText"),
-      bgImage: "/images/home-news/carnaciori-1.jpg",
-    },
-    {
-      title: t("home.news.items.title"),
-      buttonText: t("home.news.items.buttonText"),
-      bgImage: "/images/home-news/carnaciori-2.jpg",
-    },
-    {
-      title: t("home.news.items.title"),
-      buttonText: t("home.news.items.buttonText"),
-      bgImage: "/images/home-news/carnaciori-3.jpg",
-    },
-    {
-      title: t("home.news.items.title"),
-      buttonText: t("home.news.items.buttonText"),
-      bgImage: "/images/home-news/carnaciori-3.jpg",
-    },
-    {
-      title: t("home.news.items.title"),
-      buttonText: t("home.news.items.buttonText"),
-      bgImage: "/images/home-news/carnaciori-3.jpg",
-    },
-  ];
+  // Get news based on current language
+  const currentNews = newsData[i18n.language === "ru" ? "ru" : "ro"];
+
+  // Map news items to HomeNewsCard props
+  const news = currentNews.map(newsItem => ({
+    title: newsItem.title,
+    buttonText: t("home.news.items.buttonText"),
+    bgImage: newsItem.image,
+    onClick: () => navigate(`/news/${newsItem.title}`),
+  }));
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -91,11 +75,12 @@ const NewsSection = () => {
           }}
         >
           {news.map(item => (
-            <SwiperSlide key={item.bgImage} className="overflow-visible">
+            <SwiperSlide key={item.title} className="overflow-visible">
               <HomeNewsCard
                 bgImage={item.bgImage}
                 title={item.title}
                 buttonText={item.buttonText}
+                onClick={item.onClick}
               />
             </SwiperSlide>
           ))}
