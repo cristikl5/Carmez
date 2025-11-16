@@ -200,7 +200,7 @@ const resources = {
         returnsExchanges: "Returnări și schimburi",
         shippingDelivery: "Livrare",
         privacyPolicy: "Politica de confidențialitate",
-        description: "Rețete clasice. Din 1904",
+        description: "Rețete clasice.\nDin 1904",
         followUs: "Urmărește-ne",
         // Categories
         crenvurstiSafalade: "Crenvurști/Safalade",
@@ -724,7 +724,7 @@ const resources = {
         returnsExchanges: "Возврат и обмен",
         shippingDelivery: "Доставка",
         privacyPolicy: "Политика конфиденциальности",
-        description: "Классические рецепты. С 1904.",
+        description: "Классические рецепты.\nС 1904.",
         followUs: "Подписывайтесь на нас",
         // Categories
         crenvurstiSafalade: "Сосиски/Сардельки",
