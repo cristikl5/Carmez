@@ -1,6 +1,7 @@
-import RecipesGrid, { type Recipe } from "@/components/recipes/RecipesGrid";
+import RecipesGrid from "@/components/recipes/RecipesGrid";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { Input } from "@/components/ui/Input";
+import { type Recipe, recipes } from "@/data/recipesData";
 import {
   Select,
   SelectContent,
@@ -13,41 +14,6 @@ import {
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const recipes: Recipe[] = [
-  {
-    image: "/images/recipes/food-1.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-2.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-3.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-4.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-5.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-6.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-7.png",
-    title: "Olivier",
-  },
-  {
-    image: "/images/recipes/food-8.png",
-    title: "Olivier",
-  },
-];
 
 const Recipes = () => {
   const [searchTerm, setSearchTerm] = useState("");

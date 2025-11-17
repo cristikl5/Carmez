@@ -1,9 +1,5 @@
+import type { Recipe } from "@/data/recipesData";
 import RecipeCard from "./RecipeCard";
-
-export type Recipe = {
-  image: string;
-  title: string;
-};
 
 const RecipesGrid = ({ recipes }: { recipes: Recipe[] }) => {
   return recipes && recipes.length > 0 ? (

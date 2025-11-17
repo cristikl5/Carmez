@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { newsData } from "@/data/newsData";
 import { Search } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const ITEMS_PER_PAGE = 12;
@@ -26,10 +26,25 @@ const NewsPage = () => {
   const currentNews = newsData[i18n.language === "ru" ? "ru" : "ro"];
 
   const filteredNews = useMemo(() => {
-    return currentNews.filter(newsItem =>
-      newsItem.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return currentNews;
+
+    return currentNews.filter(newsItem => {
+      const haystack = [
+        newsItem.title,
+        newsItem.excerpt ?? "",
+        newsItem.body ?? "",
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(term);
+    });
   }, [currentNews, searchTerm]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, i18n.language]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);

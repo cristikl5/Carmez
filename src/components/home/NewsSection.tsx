@@ -21,7 +21,7 @@ const NewsSection = () => {
     title: newsItem.title,
     buttonText: t("home.news.items.buttonText"),
     bgImage: newsItem.image,
-    onClick: () => navigate(`/news/${newsItem.title}`),
+    onClick: () => navigate(`/news/${newsItem.slug}`),
   }));
 
   const handlePrev = () => {

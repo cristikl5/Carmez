@@ -1,3 +1,4 @@
+import { recipes } from "@/data/recipesData";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
@@ -7,12 +8,14 @@ import { products } from "../../data/products";
 import ProductCard from "../products/ProductCard";
 import Breadcrumbs from "../ui/Breadcrumbs";
 import Button from "../ui/Button";
-import Ingredients from "./Ingredients";
-import PreparationMethod from "./PreparationMethod";
 
 const RecipeDetails = () => {
   const { name } = useParams();
   const swiperRef = useRef<any>(null);
+  const decodedName = name ? decodeURIComponent(name) : "";
+  const recipe = recipes.find(r => r.title === decodedName);
+  const recipeImage =
+    recipe?.image ?? "/images/recipes/carnaciori-de-pui-bruxelles.jpg";
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -31,15 +34,15 @@ const RecipeDetails = () => {
       <div className="fluid-container">
         <Breadcrumbs hideTitle />
         <div className="details-fluid-container">
-          <h1 className="font-semibold font-barlow text-4xl">{name}</h1>
-          <div className="mt-8 space-y-8 flex flex-col justify-center">
+          <h1 className="font-semibold font-barlow text-4xl">
+            {recipe?.title ?? decodedName}
+          </h1>
+          <div className="mt-8 flex flex-col justify-center">
             <img
-              src="/images/recipes/olivier.png"
-              alt={name}
+              src={recipeImage}
+              alt={recipe?.title ?? decodedName}
               className="rounded-[18px] object-contain"
             />
-            <Ingredients />
-            <PreparationMethod />
           </div>
         </div>
         <div className="mt-28">
@@ -75,21 +78,23 @@ const RecipeDetails = () => {
               className="overflow-visible"
               style={{ overflow: "visible" }}
               breakpoints={{
-                // Mobile: Strict 1 slide per view with centered slides
                 320: {
                   slidesPerView: 1,
                   spaceBetween: 16,
                   centeredSlides: true,
                 },
-                // Tablet: Show 1.5 slides per view
                 768: {
                   slidesPerView: 1.5,
                   spaceBetween: 24,
                   centeredSlides: false,
                 },
-                // Desktop: Auto slides with full spacing
                 1024: {
-                  slidesPerView: "auto",
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                  centeredSlides: false,
+                },
+                1440: {
+                  slidesPerView: 4,
                   spaceBetween: 32,
                   centeredSlides: false,
                 },
