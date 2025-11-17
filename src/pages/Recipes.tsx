@@ -1,7 +1,6 @@
 import RecipesGrid from "@/components/recipes/RecipesGrid";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { Input } from "@/components/ui/Input";
-import { type Recipe, recipes } from "@/data/recipesData";
 import {
   Select,
   SelectContent,
@@ -10,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { recipes } from "@/data/recipesData";
 
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
