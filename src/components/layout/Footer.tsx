@@ -122,9 +122,6 @@ const Footer = () => {
               alt="Logo"
               className="object-contain h-12 md:h-auto"
             />
-            <p className="font-ibarra text-sm md:text-base font-normal text-primary max-w-[280px] md:max-w-[280px] whitespace-pre-line">
-              {t("footer.description")}
-            </p>
             <div className="space-y-2.5">
               {infoItems.map(link => (
                 <div key={link.title} className="flex items-start gap-2">

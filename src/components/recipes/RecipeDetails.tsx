@@ -1,6 +1,7 @@
 import { recipes } from "@/data/recipesData";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,12 +11,22 @@ import Breadcrumbs from "../ui/Breadcrumbs";
 import Button from "../ui/Button";
 
 const RecipeDetails = () => {
+  const { t, i18n } = useTranslation();
   const { name } = useParams();
   const swiperRef = useRef<any>(null);
+  const isRussian = i18n.language === "ru";
   const decodedName = name ? decodeURIComponent(name) : "";
-  const recipe = recipes.find(r => r.title === decodedName);
+  const recipe = recipes.find(
+    r =>
+      r.slug === decodedName ||
+      r.title === decodedName ||
+      r.titleRu === decodedName
+  );
   const recipeImage =
     recipe?.image ?? "/images/recipes/carnaciori-de-pui-bruxelles.jpg";
+  const recipeTitle = isRussian
+    ? recipe?.titleRu || recipe?.title
+    : recipe?.title;
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -35,12 +46,12 @@ const RecipeDetails = () => {
         <Breadcrumbs hideTitle />
         <div className="details-fluid-container">
           <h1 className="font-semibold font-barlow text-4xl">
-            {recipe?.title ?? decodedName}
+            {recipeTitle ?? decodedName}
           </h1>
           <div className="mt-8 flex flex-col justify-center">
             <img
               src={recipeImage}
-              alt={recipe?.title ?? decodedName}
+              alt={recipeTitle ?? decodedName}
               className="rounded-[18px] object-contain"
             />
           </div>
@@ -48,14 +59,14 @@ const RecipeDetails = () => {
         <div className="mt-28">
           <div className="flex sm:items-center flex-col sm:flex-row sm:justify-between">
             <h3 className="font-medium text-3xl font-barlow">
-              Produse din rețetă
+              {t("recipes.productsInRecipe")}
             </h3>
             <div className="flex items-center gap-6">
               <Button
                 variant="ghost"
                 className="font-bold whitespace-nowrap pl-0 sm:pl-6"
               >
-                Vezi pe toate
+                {t("recipes.seeAll")}
               </Button>
               <div className="flex items-center gap-1">
                 <Button variant="icon" onClick={handlePrev}>

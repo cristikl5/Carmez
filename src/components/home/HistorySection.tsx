@@ -29,7 +29,7 @@ const HistorySection = () => {
         </div>
         <div className="flex flex-col gap-6 md:gap-8 lg:gap-11 order-1 lg:order-2">
           <div className="space-y-3 md:space-y-4">
-            <h2 className="font-barlow font-medium text-2xl md:text-3xl lg:text-[40px] leading-tight lg:leading-10">
+            <h2 className="font-barlow font-semibold text-4xl md:text-[56px]">
               {t("home.history.subtitle")}
             </h2>
             <p className="font-normal text-sm md:text-base text-gray-700 leading-relaxed">

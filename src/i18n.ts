@@ -68,8 +68,8 @@ const resources = {
           },
           unitMeasures: {
             tone: "TONE",
-            m2: "m2",
-            angajati: "angajati",
+            m2: "m²",
+            angajati: "angajați",
           },
         },
       },
@@ -114,10 +114,15 @@ const resources = {
             description:
               "Carmez sărbătorește jubileul - 95 de ani de la fondare. În acest an, SA «Carmez» a fost recunoscut ca cel mai mare combinat de prelucrare a cărnii din Moldova.",
           },
-          "1991": {
-            title: "INDEPENDENȚA",
+          "1995": {
+            title: "Carmez S.A.",
             description:
-              'După destrămarea URSS, apare SA "Carmez", producând produse din carne până în anul 2013.',
+              "În ianuarie 1995, combinatul a fost transformat în societatea pe acțiuni «Carmez». Această societate era cea mai mare întreprindere de prelucrare a cărnii din Moldova, satisfăcând o parte semnificativă a nevoilor pieței interne. În plus, mai mult de 10% din produsele fabricate erau exportate în țările CSI, precum și în România, Italia, Polonia, Germania și alte țări.",
+          },
+          "1991": {
+            title: "Condiții de arendă",
+            description:
+              "Colectivul întreprinderii a trecut la condiții de arendă.",
           },
           "1988": {
             title: "A 3-a reconstrucție",
@@ -200,7 +205,8 @@ const resources = {
         returnsExchanges: "Returnări și schimburi",
         shippingDelivery: "Livrare",
         privacyPolicy: "Politica de confidențialitate",
-        description: "Rețete clasice.\nDin 1904",
+        description: "Rețete clasice.",
+        description2: "Din 1904",
         followUs: "Urmărește-ne",
         // Categories
         crenvurstiSafalade: "Crenvurști/Safalade",
@@ -305,6 +311,10 @@ const resources = {
       stores: {
         title: "Magazinele noastre",
         search: "Cauta...",
+        since: "Din",
+        address: "Adresa:",
+        phone: "Telefon:",
+        schedule: "Orar:",
         workingHours: {
           mondayFriday: "Luni –Vineri:",
           saturday: "Sîmbata:",
@@ -343,6 +353,8 @@ const resources = {
         reset: "Resetare",
         months: "Luni",
         years: "Ani",
+        monthsUnit: "luni",
+        yearsUnit: "ani",
         pork: "Carne de porc",
         beef: "Carne de vita",
         chicken: "Carne de pui",
@@ -362,15 +374,60 @@ const resources = {
         snackzStickz: "Snackz/Stickz",
       },
 
+      // Catalog
+      catalog: {
+        search: "Cauta...",
+        sort: "Sortare",
+        sortAscending: "Crescător",
+        sortDescending: "Descrescător",
+        resultFound: "Am găsit",
+        itemsForYou: "de articole pentru tine",
+        noProductsFound: "Nu au fost găsite produse",
+      },
+
+      // News
+      news: {
+        search: "Cauta...",
+        noNewsFound: "Nu au fost găsite articole",
+      },
+
+      // Products
+      products: {
+        notFound: "Produsul nu a fost găsit",
+        ingredients: "Ingrediente:",
+        suggested: "Produse Sugerate",
+        newBadge: "Nou",
+        features: {
+          freshness: "Tehnologie de conservare a prospețimii",
+          quality: "Controlul calității în toate etapele",
+          meat: "Carne din fermele noastre",
+          spices: "Condimente naturale",
+        },
+      },
+
       // Recipes
       recipes: {
         search: "Cauta...",
         sort: "Sort",
+        noRecipesFound: "Nu au fost găsite rețete",
         sortOptions: {
           newest: "Newest",
           oldest: "Oldest",
           mostViewed: "Most viewed",
           leastViewed: "Least viewed",
+        },
+        preparationMethod: "Metoda de preparare:",
+        step: "Pasul",
+        ingredients: "Ingrediente:",
+        cookingTime: "Timp de gătire",
+        servings: "Număr de porții",
+        productsInRecipe: "Produse din rețetă",
+        seeAll: "Vezi pe toate",
+        tips: "Sfaturi:",
+        tipsList: {
+          tip1: "În loc de cârnați, puteți folosi carne roșie gătită, cum ar fi carnea de vită, sau carnea de pasăre, cum ar fi curcanul, rața sau puiul.",
+          tip2: "În loc de cârnați gătiți, puteți folosi cârnați afumați sau îi puteți înlocui cu o parte din cârnații gătiți, de exemplu, într-un raport de 1:1.",
+          tip3: "Mazărea verde conservată poate fi înlocuită cu mazăre proaspătă sau congelată, fiartă în prealabil.",
         },
       },
     },
@@ -441,8 +498,8 @@ const resources = {
           },
           unitMeasures: {
             tone: "тонн",
-            m2: "м2",
-            angajati: "angajati",
+            m2: "м²",
+            angajati: "сотрудников",
           },
         },
       },
@@ -487,10 +544,15 @@ const resources = {
             description:
               "Carmez празднует юбилей - 95 лет со дня основания. В этот год SA «Carmez» был отмечен как крупнейший в Молдове мясоперерабатывающий завод.",
           },
-          "1991": {
-            title: "НЕЗАВИСИМОСТЬ",
+          "1995": {
+            title: "Carmez S.A.",
             description:
-              "После развала СССР, появляется АО «Кармез», производящее мясную продукцию до 2013 года.",
+              "Январь 1995 года - комбинат был преобразован в акционерное общество «Carmez». Это общество являлось крупнейшим мясоперерабатывающим предприятием Молдовы, удовлетворяя значительную часть потребностей внутреннего рынка. Кроме этого, более 10% производимой продукции экспортировалось в страны СНГ, а также в Румынию, Италию, Польшу, Германию и др.страны.",
+          },
+          "1991": {
+            title: "Арендные условия",
+            description:
+              "Коллектив предприятия перешел на арендные условия труда.",
           },
           "1988": {
             title: "3-я реконструкция",
@@ -636,6 +698,10 @@ const resources = {
       stores: {
         title: "Наши магазины",
         search: "Поиск...",
+        since: "С",
+        address: "Адрес:",
+        phone: "Телефон:",
+        schedule: "Режим работы:",
         workingHours: {
           mondayFriday: "Понедельник – Пятница:",
           saturday: "Суббота:",
@@ -674,6 +740,8 @@ const resources = {
         reset: "Сброс",
         months: "Месяцы",
         years: "Годы",
+        monthsUnit: "мес.",
+        yearsUnit: "лет",
         pork: "Свинина",
         beef: "Говядина",
         chicken: "Курятина",
@@ -693,15 +761,60 @@ const resources = {
         snackzStickz: "Snackz/Stickz",
       },
 
+      // Catalog
+      catalog: {
+        search: "Поиск...",
+        sort: "Сортировка",
+        sortAscending: "По возрастанию",
+        sortDescending: "По убыванию",
+        resultFound: "Найдено",
+        itemsForYou: "товаров для вас",
+        noProductsFound: "Продукты не найдены",
+      },
+
+      // News
+      news: {
+        search: "Поиск...",
+        noNewsFound: "Статьи не найдены",
+      },
+
+      // Products
+      products: {
+        notFound: "Продукт не найден",
+        ingredients: "Ингредиенты:",
+        suggested: "Рекомендуемые продукты",
+        newBadge: "Новинка",
+        features: {
+          freshness: "Технология сохранения свежести",
+          quality: "Контроль качества на всех этапах",
+          meat: "Мясо с наших ферм",
+          spices: "Натуральные специи",
+        },
+      },
+
       // Recipes
       recipes: {
         search: "Поиск...",
         sort: "Сортировка",
+        noRecipesFound: "Рецепты не найдены",
         sortOptions: {
           newest: "Новые",
           oldest: "Старые",
           mostViewed: "Популярные",
           leastViewed: "Менее популярные",
+        },
+        preparationMethod: "Способ приготовления:",
+        step: "Шаг",
+        ingredients: "Ингредиенты:",
+        cookingTime: "Время приготовления",
+        servings: "Количество порций",
+        productsInRecipe: "Продукты в рецепте",
+        seeAll: "Смотреть все",
+        tips: "Советы:",
+        tipsList: {
+          tip1: "Вместо колбасы можно использовать приготовленное красное мясо, например, говядину, или мясо птицы, например, индейку, утку или курицу.",
+          tip2: "Вместо вареной колбасы можно использовать копченую колбасу или заменить часть вареной колбасы, например, в соотношении 1:1.",
+          tip3: "Консервированный зеленый горошек можно заменить свежим или замороженным, предварительно отваренным.",
         },
       },
 
@@ -724,7 +837,8 @@ const resources = {
         returnsExchanges: "Возврат и обмен",
         shippingDelivery: "Доставка",
         privacyPolicy: "Политика конфиденциальности",
-        description: "Классические рецепты.\nС 1904.",
+        description: "Классические рецепты",
+        description2: "С 1904.",
         followUs: "Подписывайтесь на нас",
         // Categories
         crenvurstiSafalade: "Сосиски/Сардельки",
@@ -741,7 +855,7 @@ const resources = {
           address: "R.Moldova, or.Chișinău, Str.Calea Basarabiei 36/4",
           phone: "(+373) 22 788 251",
           email: "receptio@carmez.md",
-          workingHours: "9:00 – 17:30 Lu – Vi (9:00 – 17:30 Пн – Пт)",
+          workingHours: "9:00 – 17:30, Пн – Пт",
         },
         phoneNumbers: {
           primary: "(+373) 22 788 251",

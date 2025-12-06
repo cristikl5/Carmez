@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import type { Product } from "../../data/products";
 import ProductCard from "../products/ProductCard";
 
 const ProductsGrid = ({ products }: { products: Product[] }) => {
+  const { t } = useTranslation();
+
   return products && products.length > 0 ? (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-10">
       {products.map(product => (
@@ -10,7 +13,7 @@ const ProductsGrid = ({ products }: { products: Product[] }) => {
     </div>
   ) : (
     <div className="text-center py-10">
-      <p className="text-gray-500 text-lg">Nu au fost găsite produse</p>
+      <p className="text-gray-500 text-lg">{t("catalog.noProductsFound")}</p>
     </div>
   );
 };

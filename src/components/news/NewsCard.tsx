@@ -5,12 +5,6 @@ import type { News } from "./NewsGrid";
 const NewsCard = ({ news }: { news: News }) => {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
-  const viewsLabel =
-    i18n.language === "ru"
-      ? "просмотры"
-      : i18n.language === "ro"
-        ? "vizionari"
-        : "views";
   const locale =
     i18n.language === "ru"
       ? "ru-RU"
@@ -43,10 +37,6 @@ const NewsCard = ({ news }: { news: News }) => {
                 month: "long",
                 year: "numeric",
               })}
-            </span>
-            <span className="bg-gray-400 size-1 rounded-full"></span>
-            <span className="text-sm text-gray-500">
-              {news.views} {viewsLabel}
             </span>
           </div>
         </div>

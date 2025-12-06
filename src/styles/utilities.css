@@ -110,3 +110,16 @@
 .animate-fade-in {
   animation: fadeInUp 0.4s ease-out both;
 }
+
+/* ==========================================================================
+   Scrollbar hide utility for horizontal scroll containers
+   ========================================================================== */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

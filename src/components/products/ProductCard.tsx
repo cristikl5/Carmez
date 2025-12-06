@@ -25,7 +25,7 @@ const ProductCard = ({
     >
       {isNew && (
         <span className="absolute top-0 left-0 bg-primary text-white rounded-tl-[18px] rounded-br-3xl px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium">
-          New
+          {i18n.language === "ru" ? "Новинка" : "Nou"}
         </span>
       )}
       <div className="aspect-square mb-3 md:mb-4 flex items-center justify-center">

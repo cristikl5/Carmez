@@ -13,6 +13,7 @@ import {
 import { products } from "@/data/products";
 import { Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type FilterData = {
   meatType?: string;
@@ -100,6 +101,7 @@ const parseExpirationToMonths = (expiration: string): number => {
 };
 
 const Catalog = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<FilterData>({});
@@ -197,13 +199,13 @@ const Catalog = () => {
         </div>
         <div className="mt-6 flex items-center justify-between flex-wrap gap-4">
           <span className="text-sm font-lato font-normal text-gray-400">
-            Am găsit{" "}
-            <span className="text-primary">{filteredProducts.length}</span> de
-            articole pentru tine
+            {t("catalog.resultFound")}{" "}
+            <span className="text-primary">{filteredProducts.length}</span>{" "}
+            {t("catalog.itemsForYou")}
           </span>
           <div className="flex items-center gap-3">
             <Input
-              placeholder="Cauta..."
+              placeholder={t("catalog.search")}
               value={searchTerm}
               onChange={e => {
                 setSearchTerm(e.target.value);
@@ -214,11 +216,11 @@ const Catalog = () => {
             />
             <Select value={sortOrder} onValueChange={handleSortChange}>
               <SelectTrigger className="w-full !h-11 sm:w-[180px] border-gray-400">
-                <SelectValue placeholder="Sortare" />
+                <SelectValue placeholder={t("catalog.sort")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="asc">Crescător</SelectItem>
-                <SelectItem value="desc">Descrescător</SelectItem>
+                <SelectItem value="asc">{t("catalog.sortAscending")}</SelectItem>
+                <SelectItem value="desc">{t("catalog.sortDescending")}</SelectItem>
               </SelectContent>
             </Select>
           </div>

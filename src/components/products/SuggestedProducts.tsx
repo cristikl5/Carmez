@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { products } from "../../data/products";
@@ -7,6 +8,7 @@ import Button from "../ui/Button";
 import ProductCard from "./ProductCard";
 
 const SuggestedProducts = () => {
+  const { t } = useTranslation();
   const swiperRef = useRef<any>(null);
 
   const handlePrev = () => {
@@ -24,7 +26,9 @@ const SuggestedProducts = () => {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h3 className="font-barlow text-3xl font-normal">Produse Sugerate</h3>
+        <h3 className="font-barlow text-3xl font-normal">
+          {t("products.suggested")}
+        </h3>
         <div className="flex items-center gap-2">
           <Button variant="icon" onClick={handlePrev}>
             <ArrowLeft size={16} />
@@ -57,10 +61,10 @@ const SuggestedProducts = () => {
               spaceBetween: 24,
               centeredSlides: false,
             },
-            // Desktop: Auto slides with full spacing
+            // Desktop: Show 4 slides
             1024: {
-              slidesPerView: "auto",
-              spaceBetween: 32,
+              slidesPerView: 4,
+              spaceBetween: 24,
               centeredSlides: false,
             },
           }}
@@ -68,7 +72,7 @@ const SuggestedProducts = () => {
           {products.slice(0, 8).map(product => (
             <SwiperSlide
               key={product.id}
-              className="overflow-visible w-full"
+              className="overflow-visible"
             >
               <ProductCard {...product} />
             </SwiperSlide>

@@ -42,15 +42,17 @@ const Filters = ({ onFiltersChange, onReset }: FiltersProps) => {
   });
 
   const formatValue = (months: number) => {
+    const monthsUnit = t("filters.monthsUnit");
+    const yearsUnit = t("filters.yearsUnit");
     if (months < 12) {
-      return `${months} luni`;
+      return `${months} ${monthsUnit}`;
     } else {
       const years = Math.floor(months / 12);
       const remainingMonths = months % 12;
       if (remainingMonths === 0) {
-        return `${years} ani`;
+        return `${years} ${yearsUnit}`;
       } else {
-        return `${years} ani ${remainingMonths} luni`;
+        return `${years} ${yearsUnit} ${remainingMonths} ${monthsUnit}`;
       }
     }
   };

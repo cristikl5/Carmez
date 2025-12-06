@@ -40,15 +40,18 @@ const WhyUsSection = () => {
           }}
         >
           <div className="space-y-11">
-            <h3 className="text-center font-barlow font-medium text-3xl">
+            <h3 className="text-center font-barlow font-semibold text-4xl md:text-[56px]">
               {t("home.whyUs.title")}
             </h3>
-            <div className="grid lg:grid-cols-3 gap-24">
+            <div className="grid lg:grid-cols-3 gap-6">
               {motives.map(motive => (
-                <div key={motive.description}>
-                  <h4 className="text-center font-barlow font-bold text-7xl lg:text-9xl">
+                <div
+                  key={motive.description}
+                  className="bg-white/70 backdrop-blur-sm rounded-2xl p-4"
+                >
+                  <h4 className="text-center font-barlow font-bold text-7xl lg:text-9xl whitespace-nowrap">
                     {motive.value}
-                    <span className="text-lg font-barlow font-bold">
+                    <span className="text-lg font-barlow font-bold align-baseline">
                       {motive.unitMeasure}
                     </span>
                   </h4>

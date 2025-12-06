@@ -72,7 +72,7 @@ const Breadcrumbs = ({ customTitle, hideTitle }: BreadcrumbsProps) => {
 
       {/* Page Title - only show if hideTitle is false */}
       {!hideTitle && (
-        <h1 className="text-3xl !mt-0 md:text-4xl lg:text-5xl font-medium text-dark font-barlow leading-10">
+        <h1 className="text-4xl !mt-0 md:text-5xl lg:text-6xl font-medium text-dark font-barlow">
           {currentPageTitle}
         </h1>
       )}

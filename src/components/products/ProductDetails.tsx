@@ -12,7 +12,7 @@ export type Metric = {
 
 const ProductDetails = () => {
   const { title } = useParams();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const decodedTitle = title ? decodeURIComponent(title) : "";
   const product = products.find(
     p => p.title === decodedTitle || p.titleRu === decodedTitle
@@ -24,7 +24,7 @@ const ProductDetails = () => {
         <div className="fluid-container">
           <Breadcrumbs hideTitle />
           <div className="text-center py-10">
-            <p className="text-gray-500 text-lg">Produsul nu a fost găsit</p>
+            <p className="text-gray-500 text-lg">{t("products.notFound")}</p>
           </div>
         </div>
       </section>
@@ -38,14 +38,18 @@ const ProductDetails = () => {
     i18n.language === "ru" ? product.ingredientsRu : product.ingredients;
   const currentPackaging =
     i18n.language === "ru" ? product.packagingRu : product.packaging;
+  const currentWeight =
+    i18n.language === "ru" ? product.weightRu : product.weight;
+  const currentExpiration =
+    i18n.language === "ru" ? product.expirationRu : product.expiration;
 
   const metrics: Metric[] = [
     {
-      value: product.weight,
+      value: currentWeight,
       image: "/icons/scale.svg",
     },
     {
-      value: product.expiration,
+      value: currentExpiration,
       image: "/icons/timer.svg",
     },
     {
@@ -91,30 +95,30 @@ const ProductDetails = () => {
                 href="#"
                 className="font-bold text-primary block hover:underline underline-offset-4"
               >
-                Tehnologie de conservare a prospețimii
+                {t("products.features.freshness")}
               </a>
               <a
                 href="#"
                 className="font-bold text-primary block hover:underline underline-offset-4"
               >
-                Controlul calității în toate etapele
+                {t("products.features.quality")}
               </a>
               <a
                 href="#"
                 className="font-bold text-primary block hover:underline underline-offset-4"
               >
-                Carne din fermele noastre
+                {t("products.features.meat")}
               </a>
               <a
                 href="#"
                 className="font-bold text-primary block hover:underline underline-offset-4"
               >
-                Condimente naturale
+                {t("products.features.spices")}
               </a>
             </div>
             <div className="mt-5 space-y-3">
               <h3 className="font-bold text-lg text-gray-800">
-                {i18n.language === "ru" ? "Ингредиенты:" : "Ingrediente:"}
+                {t("products.ingredients")}
               </h3>
               <p className="font-normal leading-6 text-gray-600">
                 {currentIngredients}

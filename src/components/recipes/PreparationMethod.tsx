@@ -1,77 +1,52 @@
-type Step = {
-  title: string;
-  description: string;
+import { useTranslation } from "react-i18next";
+import { type Step } from "@/data/recipesData";
+
+type PreparationMethodProps = {
+  description?: string;
+  descriptionRu?: string;
+  steps?: Step[];
 };
 
-const steps: Step[] = [
-  {
-    title: "Pasul 1",
-    description:
-      "Fierbeți ouăle tari, fierbeți cartofii cu coajă și fierbeți morcovii. Scurgeți lichidul din mazărea din conservă.",
-  },
-  {
-    title: "Pasul 2",
-    description:
-      "Fierbeți ouăle tari, fierbeți cartofii cu coajă și fierbeți morcovii. Scurgeți lichidul din mazărea din conservă.",
-  },
-  {
-    title: "Pasul 3",
-    description:
-      "Fierbeți ouăle tari, fierbeți cartofii cu coajă și fierbeți morcovii. Scurgeți lichidul din mazărea din conservă.",
-  },
-  {
-    title: "Pasul 4",
-    description:
-      "Fierbeți ouăle tari, fierbeți cartofii cu coajă și fierbeți morcovii. Scurgeți lichidul din mazărea din conservă.",
-  },
-  {
-    title: "Pasul 5",
-    description:
-      "Fierbeți ouăle tari, fierbeți cartofii cu coajă și fierbeți morcovii. Scurgeți lichidul din mazărea din conservă.",
-  },
-];
+const PreparationMethod = ({
+  description,
+  descriptionRu,
+  steps,
+}: PreparationMethodProps) => {
+  const { t, i18n } = useTranslation();
+  const isRussian = i18n.language === "ru";
 
-const PreparationMethod = () => {
+  const localizedDescription = isRussian
+    ? descriptionRu || description
+    : description;
+
   return (
     <div className="space-y-4">
-      <h4 className="font-bold text-2xl">Metoda de preparare:</h4>
-      <p className="font-normal text-gray-400">
-        În ciuda faptului că fiecare familie prepară salata Olivier în felul
-        său, aceasta este cea mai comună rețetă, care poate fi numită clasică.
-        Cheia unui Olivier bun sunt ingredientele proaspete și de înaltă
-        calitate. Încercați să preparați această salată cu cârnați fierți de la
-        Mikoyan.
-      </p>
-      <div className="space-y-8">
-        {steps.map(step => (
-          <div className="space-y-2">
-            <h4 className="font-bold text-2xl">{step.title}</h4>
-            <p className="font-normal text-gray-400">{step.description}</p>
+      <h4 className="font-bold text-2xl">{t("recipes.preparationMethod")}</h4>
+      {localizedDescription && (
+        <p className="font-normal text-gray-400">{localizedDescription}</p>
+      )}
+      {steps && steps.length > 0 && (
+        <div className="space-y-8">
+          {steps.map((step, index) => (
+            <div className="space-y-2" key={index}>
+              <h4 className="font-bold text-2xl">
+                {isRussian ? step.titleRu : step.title}
+              </h4>
+              <p className="font-normal text-gray-400">
+                {isRussian ? step.descriptionRu : step.description}
+              </p>
+            </div>
+          ))}
+          <div className="space-y-4">
+            <h4 className="font-bold text-2xl">{t("recipes.tips")}</h4>
+            <ul className="list-disc list-inside text-gray-400 space-y-2">
+              <li>{t("recipes.tipsList.tip1")}</li>
+              <li>{t("recipes.tipsList.tip2")}</li>
+              <li>{t("recipes.tipsList.tip3")}</li>
+            </ul>
           </div>
-        ))}
-        <div className="space-y-4">
-          <h4 className="font-bold text-2xl">
-            Dacă doriți să schimbați ingredientele din salata Olivier, păstrând
-            în același timp gustul original, încercați următoarele înlocuiri:
-          </h4>
-          <ul className="list-disc list-inside text-gray-400 space-y-2">
-            <li>
-              În loc de cârnați, puteți folosi carne roșie gătită, cum ar fi
-              carnea de vită, sau carnea de pasăre, cum ar fi curcanul, rața sau
-              puiul.
-            </li>
-            <li>
-              În loc de cârnați gătiți, puteți folosi cârnați afumați sau îi
-              puteți înlocui cu o parte din cârnații gătiți, de exemplu, într-un
-              raport de 1:1.
-            </li>
-            <li>
-              Mazărea verde conservată poate fi înlocuită cu mazăre proaspătă
-              sau congelată, fiartă în prealabil.
-            </li>
-          </ul>
         </div>
-      </div>
+      )}
     </div>
   );
 };

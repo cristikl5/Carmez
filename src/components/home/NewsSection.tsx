@@ -39,7 +39,7 @@ const NewsSection = () => {
   return (
     <section className="py-10 overflow-visible news-section bg-white">
       <div className="fluid-container">
-        <h2 className="text-center font-medium text-[32px] font-barlow text-dark">
+        <h2 className="text-center text-4xl md:text-[56px] font-semibold font-barlow text-dark">
           {t("home.news.title")}
         </h2>
       </div>
