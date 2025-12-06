@@ -65,7 +65,6 @@ const NewsDetails = () => {
             <div className="flex items-center gap-4 text-sm text-gray-400">
               <span>{formattedDate}</span>
               <span className="w-1 h-1 rounded-full bg-gray-300 inline-block" />
-              <span>{newsItem.views} vizualizări</span>
             </div>
           </div>
           <div className="mt-8 space-y-8">
